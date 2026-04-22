@@ -1,0 +1,16 @@
+# Runtime dependencies for the lattensepp-analysis pipeline.
+# Pin loosely; lock exact versions only if reproducibility breaks.
+
+# YouTube transcript + comment scraping (bench/fetch_*.py, src/common/fetch.py)
+yt-dlp>=2024.12.13
+
+# Plotting (bench/visualize.py, bench/visualize_methods.py)
+matplotlib>=3.8
+numpy>=1.26
+
+# Optional: only needed if you rerun AI agents directly via the Python SDK
+# instead of the `claude` CLI (bench/ai_rerun_n50.py uses the CLI by default).
+anthropic>=0.40.0
+
+# Optional: only needed for the Whisper profanity test (T07, not yet in repo).
+# openai-whisper>=20240930

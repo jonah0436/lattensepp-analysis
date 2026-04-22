@@ -1,0 +1,40 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "source": "n50_clean",
+  "total_wall_seconds": 98.304,
+  "total_cost_usd": 0.238981,
+  "cost_cap_usd": 0.6,
+  "per_creator": {
+    "papaplatte": {
+      "input_tokens": 10,
+      "output_tokens": 6772,
+      "cache_read_input_tokens": 39219,
+      "cache_creation_input_tokens": 28431,
+      "wall_seconds": 65.733,
+      "cost_usd": 0.073331,
+      "prompt_chars": 51989,
+      "n_videos": 50
+    },
+    "apored": {
+      "input_tokens": 10,
+      "output_tokens": 7458,
+      "cache_read_input_tokens": 39219,
+      "cache_creation_input_tokens": 25795,
+      "wall_seconds": 75.852,
+      "cost_usd": 0.073466,
+      "prompt_chars": 51985,
+      "n_videos": 50
+    },
+    "maithinkx": {
+      "input_tokens": 10,
+      "output_tokens": 10899,
+      "cache_read_input_tokens": 39219,
+      "cache_creation_input_tokens": 27006,
+      "wall_seconds": 98.301,
+      "cost_usd": 0.092184,
+      "prompt_chars": 51988,
+      "n_videos": 50
+    }
+  },
+  "errors": {}
+}

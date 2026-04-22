@@ -1,0 +1,48 @@
+{
+  "version": "script",
+  "source": "raw",
+  "n": 1,
+  "per_creator": {
+    "apored": {
+      "n_videos": 1,
+      "metrics": {
+        "vocabulary_ttr": 0.746031746031746,
+        "wealth_flex": 0.0,
+        "drama_conflict": 0.0,
+        "hype_adjectives": 0.0,
+        "egocentrism": 21.164021164021165,
+        "denglisch": 21.164021164021165,
+        "avg_word_len": 4.476190476190476,
+        "total_tokens": 189.0
+      }
+    },
+    "maithinkx": {
+      "n_videos": 1,
+      "metrics": {
+        "vocabulary_ttr": 0.33126843657817107,
+        "wealth_flex": 0.0,
+        "drama_conflict": 0.2949852507374631,
+        "hype_adjectives": 1.7699115044247788,
+        "egocentrism": 4.424778761061947,
+        "denglisch": 27.13864306784661,
+        "avg_word_len": 5.58141592920354,
+        "total_tokens": 3390.0
+      }
+    },
+    "papaplatte": {
+      "n_videos": 1,
+      "metrics": {
+        "vocabulary_ttr": 0.3238886174890083,
+        "wealth_flex": 0.0,
+        "drama_conflict": 0.0,
+        "hype_adjectives": 1.4655593551538837,
+        "egocentrism": 40.54714215925745,
+        "denglisch": 32.73082559843674,
+        "avg_word_len": 4.370297997068882,
+        "total_tokens": 2047.0
+      }
+    }
+  },
+  "wall_seconds": 0.0055,
+  "cost_usd": 0.0
+}

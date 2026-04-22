@@ -1,0 +1,26 @@
+{
+  "creator": "apored",
+  "n_videos": 50,
+  "source": "n50_clean",
+  "metrics": {
+    "vocabulary_ttr": 0.37,
+    "wealth_flex": 18.4,
+    "drama_conflict": 8.6,
+    "hype_adjectives": 18.1,
+    "egocentrism": 115,
+    "denglisch": 24.3,
+    "avg_word_len": 6.0,
+    "total_tokens": 3700
+  },
+  "cost_usd": 0.073466,
+  "runtime_s": 75.852,
+  "_meta": {
+    "model": "claude-haiku-4-5-20251001",
+    "input_tokens": 10,
+    "output_tokens": 7458,
+    "cache_read_input_tokens": 39219,
+    "cache_creation_input_tokens": 25795,
+    "duration_api_ms": 69632,
+    "prompt_chars": 51985
+  }
+}

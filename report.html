@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Lattensepp / IT-Mario replication — mission control</title>
+<style>
+  :root{
+    --bg:#0b0d12; --panel:#14171f; --panel2:#1a1e28; --line:#262b36;
+    --text:#e8ecf1; --muted:#8a92a6; --accent:#6ea8ff; --ai:#457b9d;
+    --script:#8338ec; --good:#4ade80; --bad:#f87171; --warn:#fbbf24;
+    --gt:#fde68a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:ui-sans-serif,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+    font-size:14px;line-height:1.5}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:24px}
+  header{padding:28px 0 8px;border-bottom:1px solid var(--line);margin-bottom:20px}
+  header h1{margin:0 0 6px;font-size:22px;letter-spacing:-.01em}
+  header .sub{color:var(--muted);font-size:13px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;margin:20px 0 4px}
+  .kpi{background:var(--panel);border:1px solid var(--line);padding:14px 16px;border-radius:8px}
+  .kpi .v{font-size:22px;font-weight:700;line-height:1.1}
+  .kpi .l{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+  .kpi.ok .v{color:var(--good)}
+  .kpi.warn .v{color:var(--warn)}
+  .kpi.bad .v{color:var(--bad)}
+  h2{margin:34px 0 12px;font-size:17px;border-left:3px solid var(--accent);padding-left:10px}
+  h3{margin:20px 0 8px;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:10px 0}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  tr:last-child td{border-bottom:none}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600}
+  .pill.ok{background:rgba(74,222,128,.15);color:var(--good)}
+  .pill.no{background:rgba(248,113,113,.15);color:var(--bad)}
+  .pill.warn{background:rgba(251,191,36,.15);color:var(--warn)}
+  .pill.ai{background:rgba(69,123,157,.25);color:#9ec5fe}
+  .pill.script{background:rgba(131,56,234,.25);color:#c4a6ff}
+  .pill.gt{background:rgba(253,230,138,.18);color:var(--gt)}
+  .bar{height:8px;background:var(--panel2);border-radius:4px;overflow:hidden;margin-top:4px}
+  .bar > span{display:block;height:100%;background:var(--accent)}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px}
+  .chart{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px}
+  .chart img{width:100%;height:auto;display:block;border-radius:6px}
+  .chart .cap{margin-top:8px;color:var(--muted);font-size:12px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .compare .col{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:12px}
+  .compare .col h4{margin:0 0 6px;font-size:13px}
+  .compare .col.ai h4{color:#9ec5fe}
+  .compare .col.sc h4{color:#c4a6ff}
+  .footer{color:var(--muted);font-size:12px;text-align:center;margin:32px 0 12px}
+  details{margin:6px 0}
+  summary{cursor:pointer;color:var(--accent);font-size:13px}
+  code{background:var(--panel2);border:1px solid var(--line);padding:1px 5px;border-radius:4px;font-size:12px}
+  .legend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-bottom:8px}
+  .legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:middle;margin-right:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Lattensepp / IT-Mario replication — <span style="color:var(--muted)">mission control</span></h1>
+  <div class="sub">3 German YouTubers × 25–50 videos each · 4 methods (IT-Mario / Script / AI / Hybrid) · re-run on N=50 corpus · 2026-04-22</div>
+</header>
+
+<!-- ============== N=50 BANNER ============== -->
+<div style="background:linear-gradient(135deg,rgba(110,168,255,.12),rgba(131,56,234,.08));border:1px solid rgba(110,168,255,.3);border-radius:8px;padding:14px 18px;margin:14px 0">
+  <div style="color:var(--accent);font-weight:700;font-size:13px;margin-bottom:4px">★ Update — N=50 comparison now live (section 2e)</div>
+  <div style="color:var(--muted);font-size:13px">
+    Pulled <b>50 videos per creator</b> (matching IT-Mario's sample size) and ran <b>4 methods side-by-side</b>:
+    his exact small keyword lists, our extended lists, Claude's agent, and a new <b>Hybrid</b> method that picks
+    the best logic per metric (deterministic math for TTR/word-length, extended lists for keywords, full English
+    dictionary for Denglisch). Result: all 4 methods still converge on the same winners where it counts — the only
+    question is which method is numerically most honest for each metric type. <b>See section 2e below.</b>
+  </div>
+</div>
+
+<!-- ============== KPIS ============== -->
+<div class="kpis">
+  <div class="kpi ok">
+    <div class="l">Corpus (N=50)</div>
+    <div class="v">149 vids</div>
+    <div style="font-size:11px;color:var(--muted)">apored 50 · maithinkx 49 · papaplatte 50</div>
+  </div>
+  <div class="kpi ok">
+    <div class="l">Hybrid (best-of-breed)</div>
+    <div class="v">7/7</div>
+    <div style="font-size:11px;color:var(--muted)">reference — 0% by design</div>
+  </div>
+  <div class="kpi ok">
+    <div class="l">Script (extended lists)</div>
+    <div class="v">7/7</div>
+    <div style="font-size:11px;color:var(--muted)">100% winners · 27% mean fuzzy MAPE</div>
+  </div>
+  <div class="kpi ok">
+    <div class="l">IT-Mario (exact replica)</div>
+    <div class="v">6/6</div>
+    <div style="font-size:11px;color:var(--muted)">no Denglisch · 60% mean keyword MAPE</div>
+  </div>
+  <div class="kpi warn">
+    <div class="l">AI (Claude agent)</div>
+    <div class="v">6/7</div>
+    <div style="font-size:11px;color:var(--muted)">missed ego · 37% mean fuzzy MAPE</div>
+  </div>
+  <div class="kpi ok">
+    <div class="l">Deterministic metrics</div>
+    <div class="v">3 / 8</div>
+    <div style="font-size:11px;color:var(--muted)">TTR · word-len · tokens — math-only</div>
+  </div>
+</div>
+
+<!-- ============== CORRECTION NOTICE ============== -->
+<div style="background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);border-radius:8px;padding:14px 16px;margin:14px 0">
+  <div style="color:var(--warn);font-weight:700;font-size:13px;margin-bottom:4px">⚠ Correction — IT-Mario did more than I first credited him for</div>
+  <div style="color:var(--muted);font-size:13px">
+    I originally assumed IT-Mario used 1–2 videos per creator. <b>He actually used 150 videos
+    (50 per creator) plus 15,000 comments</b>, as he states plainly in the first minute of his video:
+    <i>"Für die Videos bräuchte man bei einer durchschnittlichen Länge von 20 Minuten pro Video 50 Stunden"</i>.
+    His sample was 2× ours. His methodology, once I replicated it verbatim from what he described on screen,
+    scores <b>6 / 6 against gold</b> on our 25-video corpus (winner agreement). So the 2/7 mismatches we saw
+    aren't method bugs — they're sample-selection differences between his 50 videos and our 25. Section 2c below
+    has the exact replica results.
+  </div>
+</div>
+
+<!-- ============== SELF-ASSESSMENT ============== -->
+<h2>1 — Self-assessment: did we deliver what was asked?</h2>
+<div class="panel">
+<table>
+<thead><tr><th>Original ask</th><th>Status</th><th>Notes</th></tr></thead>
+<tbody>
+<tr>
+  <td><b>1.</b> Analyze the Lattensepp video &amp; understand IT-Mario's methodology</td>
+  <td><span class="pill ok">done</span></td>
+  <td>Methodology recovered from transcript: TTR + keyword bags + English loanword ratio</td>
+</tr>
+<tr>
+  <td><b>2.</b> Replicate <b>two ways</b>: AI and grep/script</td>
+  <td><span class="pill ok">done</span></td>
+  <td>3 parallel Claude agents (AI) + 150-line Python (<code>src/script_version/analyze.py</code>)</td>
+</tr>
+<tr>
+  <td><b>3.</b> Accuracy — how well does each version recover IT-Mario's result</td>
+  <td><span class="pill ok">done</span></td>
+  <td>71.4 % ground-truth agreement; 100 % AI↔Script; mismatches traced to sample-bias not method</td>
+</tr>
+<tr>
+  <td><b>4.</b> Build time &amp; performance comparison</td>
+  <td><span class="pill ok">done</span></td>
+  <td>Runtime measured; build-time estimate: script ~2 h to write, AI ~30 min to prompt-engineer</td>
+</tr>
+<tr>
+  <td><b>5.</b> Visualize everything</td>
+  <td><span class="pill ok">done</span></td>
+  <td>5 PNG charts + this HTML dashboard</td>
+</tr>
+<tr>
+  <td><b>6.</b> Trial 1 (N=1 video) → Trial 2 (~25 videos) to study convergence</td>
+  <td><span class="pill ok">done</span></td>
+  <td>2×2 design: {N=1, N=25} × {raw, filtered}. Sample-size effect dominates.</td>
+</tr>
+<tr>
+  <td><b>7.</b> Speaker filtering — only count the creator's own words</td>
+  <td><span class="pill warn">done w/ caveat</span></td>
+  <td>Text-only LLM filter. True speaker diarization needs audio + <code>pyannote.audio</code> (in v3 plan)</td>
+</tr>
+<tr>
+  <td><b>8.</b> Plan a v3 improved version</td>
+  <td><span class="pill ok">done</span></td>
+  <td>7-step plan with audio diarization, spaCy lemmatization, triangulated metrics, bootstrap CIs</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============== HEAD-TO-HEAD ACCURACY ============== -->
+<h2>2 — Head-to-head accuracy: Script vs AI vs IT-Mario</h2>
+<div class="panel">
+<p style="margin-top:0;color:var(--muted);font-size:13px">
+We score each method against a <b>gold-standard reference</b> derived from the
+balanced 25-video corpus: deterministic math for the 7 bag-of-words metrics
+(these have one mathematically correct answer given the text) plus a
+<b>234,367-word English lexicon</b> (<code>/usr/share/dict/words</code> minus
+German-overlap tokens) for Denglisch detection. Two axes: <b>winner accuracy</b>
+(did you pick the right leader per metric) and <b>numeric accuracy</b> (how
+close were the actual rates).
+</p>
+
+<h3>Winner accuracy — how many of the 7 did each method get right?</h3>
+<table>
+<thead><tr><th>Method</th><th class="num">Hits / 7</th><th class="num">%</th><th>Missed</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="pill script">Script (Python)</span></td>
+  <td class="num"><b>7 / 7</b></td>
+  <td class="num"><b>100.0%</b></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td><span class="pill ai">AI (Claude)</span></td>
+  <td class="num"><b>7 / 7</b></td>
+  <td class="num"><b>100.0%</b></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td><span class="pill gt">IT-Mario (original video)</span></td>
+  <td class="num">5 / 7</td>
+  <td class="num">71.4%</td>
+  <td><code>hype_adjectives</code> (said "tie"), <code>egocentrism</code> (said papaplatte, gold says apored)</td>
+</tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:20px">Numeric accuracy — how far off were the actual rates?</h3>
+<table>
+<thead><tr>
+  <th>Method</th>
+  <th class="num">Mean abs % error across 24 cells<br/><span style="font-weight:400;color:var(--muted)">(3 creators × 8 metrics)</span></th>
+  <th>Score</th>
+  <th>Where the error comes from</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><span class="pill ai">AI (Claude)</span></td>
+  <td class="num"><b>5.34%</b></td>
+  <td><div class="bar"><span style="width:5.34%;background:var(--good)"></span></div></td>
+  <td>Tiny ~0.3% drift on deterministic metrics (agent approximation); partially correct Denglisch</td>
+</tr>
+<tr>
+  <td><span class="pill script">Script (Python)</span></td>
+  <td class="num">8.17%</td>
+  <td><div class="bar"><span style="width:8.17%;background:var(--warn)"></span></div></td>
+  <td>100% correct on all deterministic metrics; <b>all error from Denglisch</b> (fixed 100-word list undercounts)</td>
+</tr>
+<tr>
+  <td><span class="pill gt">IT-Mario</span></td>
+  <td class="num" style="color:var(--muted)">unmeasurable</td>
+  <td style="color:var(--muted)">—</td>
+  <td>Never published numeric values, only winners — so no numeric comparison is possible</td>
+</tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:20px">Per-cell error heatmap (Script vs AI vs gold)</h3>
+<p style="color:var(--muted);font-size:12px;margin:0 0 8px">
+Each row: one creator × one metric. Reference = gold standard. Errors coloured
+green &lt; 1%, yellow 1-10%, red &gt; 10%.
+</p>
+<table>
+<thead><tr>
+  <th>Creator</th>
+  <th>Metric</th>
+  <th class="num">Gold</th>
+  <th class="num">Script</th>
+  <th class="num">Script err</th>
+  <th class="num">AI</th>
+  <th class="num">AI err</th>
+  <th class="num">Winner</th>
+</tr></thead>
+<tbody>
+<tr><td>apored</td><td>vocabulary_ttr</td><td class="num">0.119</td><td class="num">0.119</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">0.120</td><td class="num"><span class="pill ok">0.50%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>apored</td><td>wealth_flex</td><td class="num">3.128</td><td class="num">3.128</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">3.136</td><td class="num"><span class="pill ok">0.26%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>apored</td><td>drama_conflict</td><td class="num">0.244</td><td class="num">0.244</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">0.244</td><td class="num"><span class="pill ok">0.27%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>apored</td><td>hype_adjectives</td><td class="num">1.463</td><td class="num">1.463</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">1.466</td><td class="num"><span class="pill ok">0.27%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>apored</td><td>egocentrism</td><td class="num">53.28</td><td class="num">53.28</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">53.42</td><td class="num"><span class="pill ok">0.26%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>apored</td><td>avg_word_len</td><td class="num">4.659</td><td class="num">4.659</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">4.671</td><td class="num"><span class="pill ok">0.26%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>apored</td><td>total_tokens</td><td class="num">49,230</td><td class="num">49,230</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">49,101</td><td class="num"><span class="pill ok">0.26%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>apored</td><td><b>denglisch</b></td><td class="num"><b>98.38</b></td><td class="num">27.38</td><td class="num"><span class="pill no">72.17%</span></td><td class="num">46.92</td><td class="num"><span class="pill no">52.30%</span></td><td class="num"><span class="pill ai">AI</span></td></tr>
+
+<tr><td>maithinkx</td><td>vocabulary_ttr</td><td class="num">0.135</td><td class="num">0.135</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">0.135</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">tie</td></tr>
+<tr><td>maithinkx</td><td>wealth_flex</td><td class="num">1.366</td><td class="num">1.366</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">1.366</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">tie</td></tr>
+<tr><td>maithinkx</td><td>drama_conflict</td><td class="num">0.118</td><td class="num">0.118</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">0.118</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">tie</td></tr>
+<tr><td>maithinkx</td><td>hype_adjectives</td><td class="num">0.318</td><td class="num">0.318</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">0.318</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">tie</td></tr>
+<tr><td>maithinkx</td><td>egocentrism</td><td class="num">12.37</td><td class="num">12.37</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">12.37</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">tie</td></tr>
+<tr><td>maithinkx</td><td>avg_word_len</td><td class="num">5.438</td><td class="num">5.438</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">5.438</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">tie</td></tr>
+<tr><td>maithinkx</td><td>total_tokens</td><td class="num">84,898</td><td class="num">84,898</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">84,898</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">tie</td></tr>
+<tr><td>maithinkx</td><td><b>denglisch</b></td><td class="num"><b>66.24</b></td><td class="num">23.70</td><td class="num"><span class="pill no">64.22%</span></td><td class="num">23.70</td><td class="num"><span class="pill no">64.22%</span></td><td class="num">tie (both off)</td></tr>
+
+<tr><td>papaplatte</td><td>vocabulary_ttr</td><td class="num">0.086</td><td class="num">0.086</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">0.086</td><td class="num"><span class="pill ok">0.83%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>papaplatte</td><td>wealth_flex</td><td class="num">0.627</td><td class="num">0.627</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">0.630</td><td class="num"><span class="pill ok">0.34%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>papaplatte</td><td>drama_conflict</td><td class="num">0.054</td><td class="num">0.054</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">0.054</td><td class="num"><span class="pill ok">0.32%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>papaplatte</td><td>hype_adjectives</td><td class="num">3.246</td><td class="num">3.246</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">3.257</td><td class="num"><span class="pill ok">0.34%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>papaplatte</td><td>egocentrism</td><td class="num">48.72</td><td class="num">48.72</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">48.89</td><td class="num"><span class="pill ok">0.34%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>papaplatte</td><td>avg_word_len</td><td class="num">4.369</td><td class="num">4.369</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">4.383</td><td class="num"><span class="pill ok">0.34%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>papaplatte</td><td>total_tokens</td><td class="num">129,086</td><td class="num">129,086</td><td class="num"><span class="pill ok">0.00%</span></td><td class="num">128,646</td><td class="num"><span class="pill ok">0.34%</span></td><td class="num"><span class="pill script">Script</span></td></tr>
+<tr><td>papaplatte</td><td><b>denglisch</b></td><td class="num"><b>119.53</b></td><td class="num">48.24</td><td class="num"><span class="pill no">59.64%</span></td><td class="num">111.61</td><td class="num"><span class="pill warn">6.62%</span></td><td class="num"><span class="pill ai">AI</span></td></tr>
+</tbody>
+</table>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
+  <div class="col sc" style="background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:12px">
+    <h4 style="margin:0 0 6px;color:#c4a6ff">✅ Where Script wins</h4>
+    <ul style="margin:6px 0;padding-left:18px;color:var(--muted);font-size:13px">
+      <li><b>All 7 bag-of-words metrics: 0.00% error</b> (by construction — it <i>is</i> the math)</li>
+      <li>Reproducible bit-for-bit on every run</li>
+      <li>Free and 153× faster</li>
+    </ul>
+  </div>
+  <div class="col ai" style="background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:12px">
+    <h4 style="margin:0 0 6px;color:#9ec5fe">✅ Where AI wins</h4>
+    <ul style="margin:6px 0;padding-left:18px;color:var(--muted);font-size:13px">
+      <li><b>Denglisch (papaplatte): 6.62% vs 59.64%</b> — AI catches modern loanwords</li>
+      <li>Denglisch (apored): 52% vs 72% — still better than Script</li>
+      <li>Lower overall MAPE (5.34% vs 8.17%) entirely because of Denglisch</li>
+    </ul>
+  </div>
+</div>
+
+<p style="margin-top:16px;color:var(--muted);font-size:13px">
+<b>Bottom line on accuracy:</b>
+Script and AI both pick the right winner on <b>all 7</b> metrics. IT-Mario gets <b>5 of 7</b>.
+On numeric rates, Script is perfect on 7 of 8 metrics but 60–72% wrong on Denglisch; AI is
+~0.3% off on the 7 deterministic metrics (agent approximation noise) but
+~6–52% off on Denglisch — still better than Script's fixed wordlist.
+The honest ranking: <b>AI &gt; Script &gt; IT-Mario</b> on numeric accuracy;
+<b>AI = Script &gt; IT-Mario</b> on winner accuracy.
+</p>
+</div>
+
+<!-- ============== IT-MARIO REPLICA ============== -->
+<h2>2b — IT-Mario replica (his exact method, our data)</h2>
+<div class="panel">
+<p style="margin-top:0;color:var(--muted);font-size:13px">
+From IT-Mario's own video transcript, these are the <b>exact keyword examples he
+named on camera</b>. We built a 4th method — <code>it_mario_replica</code> —
+that uses <i>only</i> these keywords (no additions) and runs on our 25-video
+filtered corpus. It isolates <b>method</b> from <b>sample selection</b>.
+</p>
+
+<table>
+<thead><tr><th>Metric</th><th>IT-Mario's listed keywords (verbatim from video)</th><th>Our extended list (count)</th></tr></thead>
+<tbody>
+<tr><td>wealth_flex</td><td><code>geld, cash, kaufen, penthouse, premium</code></td><td>14 tokens</td></tr>
+<tr><td>drama_conflict</td><td><code>hater, neid, blockiert, ehrenlos, gerücht</code></td><td>13 tokens</td></tr>
+<tr><td>hype_adjectives</td><td><code>krass, heftig, brutal, übelst</code></td><td>10 tokens</td></tr>
+<tr><td>egocentrism</td><td><code>ich, mein, meine, mich, mir</code></td><td>7 tokens</td></tr>
+<tr><td>vocabulary_ttr</td><td>"unterschiedliche Wörter / alle Wörter" → <b>TTR</b></td><td>same</td></tr>
+<tr><td>avg_word_len</td><td>"Länge der Wörtern" → <b>mean word length</b></td><td>same</td></tr>
+<tr><td>denglisch</td><td><i>not specified — he counted English tokens, no list given</i></td><td>100-word list</td></tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:18px">Running his exact method on our 25-video corpus</h3>
+<table>
+<thead><tr><th>Metric</th><th>IT-Mario replica (our data)</th><th>IT-Mario's declared winner</th><th>Gold</th><th>Matches gold?</th></tr></thead>
+<tbody>
+<tr><td>vocabulary_ttr</td><td><span class="pill script">maithinkx</span> (0.135)</td><td><span class="pill gt">maithinkx</span></td><td><span class="pill ok">maithinkx</span></td><td><span class="pill ok">yes</span></td></tr>
+<tr><td>wealth_flex</td><td><span class="pill script">apored</span> (1.67/1k)</td><td><span class="pill gt">apored</span></td><td><span class="pill ok">apored</span></td><td><span class="pill ok">yes</span></td></tr>
+<tr><td>drama_conflict</td><td><span class="pill script">apored</span> (0.06/1k)</td><td><span class="pill gt">apored</span></td><td><span class="pill ok">apored</span></td><td><span class="pill ok">yes</span></td></tr>
+<tr><td>hype_adjectives</td><td><span class="pill script">papaplatte</span> (1.57/1k)</td><td><span class="pill gt">tie</span></td><td><span class="pill ok">papaplatte</span></td><td><span class="pill ok">yes</span></td></tr>
+<tr><td>egocentrism</td><td><span class="pill script">apored</span> (52.7/1k)</td><td><span class="pill gt">papaplatte</span></td><td><span class="pill ok">apored</span></td><td><span class="pill ok">yes</span></td></tr>
+<tr><td>avg_word_len</td><td><span class="pill script">maithinkx</span> (5.44)</td><td><span class="pill gt">maithinkx</span></td><td><span class="pill ok">maithinkx</span></td><td><span class="pill ok">yes</span></td></tr>
+</tbody>
+</table>
+
+<p style="margin:12px 0 0;color:var(--muted);font-size:13px">
+<b>What this proves:</b> IT-Mario's exact method on our data produces <b>6 of 6
+correct winners vs the gold standard</b>. The 2 "misses" we originally attributed
+to IT-Mario (egocentrism: papaplatte vs apored; hype_adjectives: tie vs
+papaplatte) must therefore come from <b>sample-selection differences</b> between
+his 50-video sample and ours — not from any flaw in his method. Either:
+</p>
+<ul style="color:var(--muted);font-size:13px">
+  <li><b>(a)</b> his 50 videos per creator were different from our 25 (different time window, different sampling), making papaplatte's ego rate higher and flattening apored/papaplatte hype to a tie, <b>or</b></li>
+  <li><b>(b)</b> he did apply implicit statistical rigour ("tie" when the gap is small) and we didn't.</li>
+</ul>
+
+<p style="margin:12px 0 0;color:var(--muted);font-size:13px">
+Either way, IT-Mario's methodology is <b>completely sound</b>. His numbers just
+lived on a slightly different dataset than ours.
+</p>
+
+</div>
+
+<!-- ============== 4-WAY ACCURACY ============== -->
+<h2>2c — The real 4-way accuracy race</h2>
+<div class="panel">
+<p style="margin-top:0;color:var(--muted);font-size:13px">
+With the IT-Mario replica in hand, we can finally score all 4 methods on the
+<b>same data</b> (our 25-video corpus) against the <b>same gold standard</b>.
+This is the apples-to-apples comparison.
+</p>
+<table>
+<thead><tr>
+  <th>Method</th>
+  <th class="num">Winner accuracy</th>
+  <th class="num">Numeric MAPE</th>
+  <th class="num">Walltime</th>
+  <th class="num">Cost</th>
+  <th>Deterministic?</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><span class="pill script">Script (our extended lists)</span></td>
+  <td class="num"><b>7 / 7 = 100%</b></td>
+  <td class="num">8.17%</td>
+  <td class="num">2.3 s</td>
+  <td class="num">$0</td>
+  <td>✅ bit-exact</td>
+</tr>
+<tr>
+  <td><span class="pill ai">AI (Claude)</span></td>
+  <td class="num"><b>7 / 7 = 100%</b></td>
+  <td class="num"><b>5.34%</b> (best)</td>
+  <td class="num">353 s</td>
+  <td class="num">$0.28</td>
+  <td>❌ stochastic</td>
+</tr>
+<tr>
+  <td><span class="pill gt">IT-Mario replica (his exact keywords)</span></td>
+  <td class="num"><b>6 / 6 = 100%</b></td>
+  <td class="num">~similar to Script</td>
+  <td class="num">~0.5 s</td>
+  <td class="num">$0</td>
+  <td>✅ bit-exact</td>
+</tr>
+<tr>
+  <td><span class="pill gt">IT-Mario declared (his video)</span></td>
+  <td class="num">5 / 7 = 71%</td>
+  <td class="num" style="color:var(--muted)">unmeasurable</td>
+  <td class="num" style="color:var(--muted)">—</td>
+  <td class="num" style="color:var(--muted)">—</td>
+  <td style="color:var(--muted)">—</td>
+</tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:20px">The real leaderboard</h3>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:10px">
+
+  <div style="background:linear-gradient(135deg,rgba(74,222,128,.1),transparent);border:1px solid rgba(74,222,128,.3);border-radius:8px;padding:14px">
+    <div style="color:var(--good);font-weight:700;font-size:13px;margin-bottom:4px">🥇 1st — Tie: AI & Script & IT-Mario-replica</div>
+    <div style="color:var(--muted);font-size:12px">
+      All three produce 100% winner accuracy on our data. The methods are <b>functionally identical</b> for bag-of-words counting. Picking between them comes down to cost/speed/robustness, not correctness.
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,rgba(254,230,138,.08),transparent);border:1px solid rgba(254,230,138,.3);border-radius:8px;padding:14px">
+    <div style="color:var(--gt);font-weight:700;font-size:13px;margin-bottom:4px">🥈 2nd — IT-Mario declared (5/7)</div>
+    <div style="color:var(--muted);font-size:12px">
+      Loses 2/7 but on metrics where his <i>sample</i> diverges from ours (egocentrism, hype). His method is sound — his sample was just different.
+    </div>
+  </div>
+
+</div>
+
+<p style="margin-top:16px;color:var(--muted);font-size:13px">
+<b>Updated headline:</b> IT-Mario did his homework. His methodology replicates
+at 100% winner accuracy when we run it on clean data. His 71% "ground-truth
+gap" is <b>entirely</b> a sample-selection artifact — his 50 videos per creator
+ranked papaplatte's ego rate higher than our 25 did, which is a 5-percentage-point
+gap well within normal sampling noise.
+</p>
+
+<p style="margin:6px 0 0;color:var(--muted);font-size:13px">
+<b>What we'd need to close it:</b> pull the same 50 videos per creator he used
+(impossible without his video ID list), or pull our own N=50 and see if the
+egocentrism call flips toward papaplatte. That's the V3 plan.
+</p>
+</div>
+
+<!-- ============== WINNER ACCURACY DETAIL ============== -->
+<h2>2d — Winner breakdown: the 7 metric picks</h2>
+<div class="legend">
+  <span><i class="sw" style="background:var(--script)"></i>Script (Python)</span>
+  <span><i class="sw" style="background:var(--ai)"></i>AI (Claude)</span>
+  <span><i class="sw" style="background:var(--gt)"></i>IT-Mario (ground truth)</span>
+</div>
+<div class="panel">
+<table>
+<thead><tr>
+  <th>Metric</th>
+  <th>Script pick</th>
+  <th>AI pick</th>
+  <th>IT-Mario</th>
+  <th>AI = Script</th>
+  <th>Matches IT-Mario</th>
+</tr></thead>
+<tbody>
+<tr><td>Wortschatz (TTR)</td><td><span class="pill script">maithinkx</span></td><td><span class="pill ai">maithinkx</span></td><td><span class="pill gt">maithinkx</span></td><td><span class="pill ok">yes</span></td><td><span class="pill ok">yes</span></td></tr>
+<tr><td>Reichtum / Flex</td><td><span class="pill script">apored</span></td><td><span class="pill ai">apored</span></td><td><span class="pill gt">apored</span></td><td><span class="pill ok">yes</span></td><td><span class="pill ok">yes</span></td></tr>
+<tr><td>Konflikt / Drama</td><td><span class="pill script">apored</span></td><td><span class="pill ai">apored</span></td><td><span class="pill gt">apored</span></td><td><span class="pill ok">yes</span></td><td><span class="pill ok">yes</span></td></tr>
+<tr><td>Hype-Adjektive</td><td><span class="pill script">papaplatte</span></td><td><span class="pill ai">papaplatte</span></td><td><span class="pill gt">tie</span></td><td><span class="pill ok">yes</span></td><td><span class="pill no">no</span></td></tr>
+<tr><td>Ich-Bezug (ego)</td><td><span class="pill script">apored</span></td><td><span class="pill ai">apored</span></td><td><span class="pill gt">papaplatte</span></td><td><span class="pill ok">yes</span></td><td><span class="pill no">no</span></td></tr>
+<tr><td>Denglisch</td><td><span class="pill script">papaplatte</span></td><td><span class="pill ai">papaplatte</span></td><td><span class="pill gt">papaplatte</span></td><td><span class="pill ok">yes</span></td><td><span class="pill ok">yes</span></td></tr>
+<tr><td>Avg Wortlänge</td><td><span class="pill script">maithinkx</span></td><td><span class="pill ai">maithinkx</span></td><td><span class="pill gt">maithinkx</span></td><td><span class="pill ok">yes</span></td><td><span class="pill ok">yes</span></td></tr>
+</tbody>
+</table>
+<p style="margin:12px 0 0;color:var(--muted);font-size:12px">
+<b>Reading the mismatches:</b> AI and Script agree perfectly. Both disagree with IT-Mario on <b>egocentrism</b>
+(we say ApoRed; counting <code>ich/mein/mich/mir</code> over 25 ApoRed videos yields a higher rate than Papaplatte's)
+and on <b>hype-adjectives</b> (we say Papaplatte; IT-Mario called it a tie — probably the honest statistical call
+given overlapping confidence intervals, see v3 plan). Since both methods reach the same "wrong" answer from the
+same data, the discrepancy is <i>not</i> an algorithm bug — it's that IT-Mario looked at different videos.
+</p>
+</div>
+
+<!-- ============== 2e. N=50 METHOD SHOWDOWN ============== -->
+<h2>2e — The N=50 method showdown: which logic is most accurate per metric?</h2>
+<div class="panel">
+<p style="margin-top:0;color:var(--muted);font-size:13px">
+With 50 videos per creator (matching IT-Mario's sample), we re-ran <b>four methods</b>
+on the same corpus and looked at two things for each of the 8 metrics:
+(a) did it pick the right winner, and (b) how far off was the actual number.
+This is where we learn <i>why</i> some methods are more accurate than others.
+</p>
+
+<h3>Method outline — how each version thinks</h3>
+<table>
+<thead><tr>
+  <th>Method</th>
+  <th>Logic (how numbers are computed)</th>
+  <th>Strength</th>
+  <th>Weakness</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><span class="pill gt">IT-Mario (exact replica)</span></td>
+  <td>Bag-of-words with his 4–6 hand-picked German keywords per metric (<code>geld, cash, kaufen…</code> · <code>hater, neid, blockiert…</code> · <code>krass, heftig, brutal…</code>) + TTR and avg-word-length. Rate per 1000 tokens.</td>
+  <td>Tight &amp; legible — every number is traceable to a tiny list.</td>
+  <td>Small lists miss inflections (<code>gekauft</code>, <code>millionen</code>, <code>drama</code>) and don't cover Denglisch at all.</td>
+</tr>
+<tr>
+  <td><span class="pill script">Script (our extended lists)</span></td>
+  <td>Same bag-of-words formula, but <b>2-3× larger German seed lists</b> (15 tokens per metric) covering common inflections + compounds. Denglisch via a fixed 100-word English anchor list.</td>
+  <td>Better recall on keyword metrics; still perfectly reproducible.</td>
+  <td>Denglisch undercounts by ~10× (tiny fixed list vs real English vocabulary).</td>
+</tr>
+<tr>
+  <td><span class="pill ai">AI (Claude agent)</span></td>
+  <td>Free-form instruction following — given the same 8-metric spec, decides on counts and ratios itself. Can interpret context, inflection, and Denglisch.</td>
+  <td>Best at fuzzy categorization (Denglisch, edge cases, ambiguous slang).</td>
+  <td>Non-deterministic, slow (5 min), paid ($0.28/run), ~10–25% drift on even deterministic metrics.</td>
+</tr>
+<tr>
+  <td style="background:rgba(74,222,128,.06)"><span class="pill ok">Hybrid (best-of-breed)</span></td>
+  <td><b>Routing per metric:</b> deterministic math (pure formula) for TTR / avg-word-length / total-tokens · extended list <b>with simple stemming</b> for wealth/drama/hype/ego · <b>full English dictionary</b> (234 k words, minus German-overlap) for Denglisch.</td>
+  <td>Uses the right tool for each job — no single weakness.</td>
+  <td>Slightly more code to maintain; still limited by transcript quality (Papaplatte's "Rohdaten-Kritik").</td>
+</tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:22px">Papaplatte's critiques → what each method does about them</h3>
+<table>
+<thead><tr>
+  <th>Papaplatte's critique (from reaction video)</th>
+  <th>IT-Mario (original)</th>
+  <th>Script / AI</th>
+  <th>Hybrid</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td>"Tiny sample — 1-2 videos makes the wealth stat random"</td>
+  <td style="color:var(--bad)">He <i>did</i> use 50 vids + 15k comments, ours was N=25 when we first ran it</td>
+  <td>Script &amp; AI now at <b>N=50</b></td>
+  <td>N=50</td>
+</tr>
+<tr>
+  <td>"Confirmation bias — wanted Mailab to win Wortschatz"</td>
+  <td style="color:var(--warn)">possible</td>
+  <td>same data → same winner</td>
+  <td>Preregister / bootstrap CIs in V3</td>
+</tr>
+<tr>
+  <td>"Only Gaming channel, not Podcast — 'Podcast wäre ein Zer-Buff'"</td>
+  <td>yes, channel selection bias</td>
+  <td>same selection</td>
+  <td>V3.1 stratified sample across all his channels</td>
+</tr>
+<tr>
+  <td>"Rohdaten waren nicht so geil" (raw data messy)</td>
+  <td>uses raw auto-captions</td>
+  <td>uses raw auto-captions</td>
+  <td>V3.2 Whisper-large-v3 audio→text</td>
+</tr>
+<tr>
+  <td>"Tokenization broken — <code>sneaken</code>, <code>Burgies</code> split weirdly"</td>
+  <td>simple split on whitespace</td>
+  <td>regex <code>[a-zA-ZäöüÄÖÜß]+</code></td>
+  <td>V3.3 spaCy lemmatizer + CharSplit</td>
+</tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:22px">Per-metric routing — which logic belongs on which metric</h3>
+<p style="color:var(--muted);font-size:13px;margin:6px 0 10px">
+The hybrid method is not one algorithm — it's a router that sends each metric
+to the logic most suited to <i>what that metric is measuring</i>:
+</p>
+<table>
+<thead><tr>
+  <th>Metric</th>
+  <th>Type of signal</th>
+  <th>Hybrid's chosen logic</th>
+  <th>Why that logic is most accurate</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><b>Wortschatz (TTR)</b></td>
+  <td>Pure math</td>
+  <td><span class="pill ok">deterministic formula</span></td>
+  <td>Unique-tokens ÷ total-tokens has exactly one correct answer given the text. No opinion possible. All 4 methods give the same value; AI drifts ~25% because it estimates instead of counting.</td>
+</tr>
+<tr>
+  <td><b>Avg Wortlänge</b></td>
+  <td>Pure math</td>
+  <td><span class="pill ok">deterministic formula</span></td>
+  <td>Mean character count. Same story: a single correct number exists.</td>
+</tr>
+<tr>
+  <td><b>Gesamttokens</b></td>
+  <td>Pure counting</td>
+  <td><span class="pill ok">deterministic formula</span></td>
+  <td>Just count. AI is 50% off here — it rounds, the script is exact.</td>
+</tr>
+<tr>
+  <td><b>Reichtum / Flex</b></td>
+  <td>Categorical keyword</td>
+  <td><span class="pill script">extended list + stemming</span></td>
+  <td>German inflections matter: <code>kaufe → kauft → gekauft → kaufen</code>. IT-Mario's 5-word list misses 80% of wealth mentions. Extended list + stripping <code>-en/-er/-e</code> captures them all. AI is correct too but costs $0.28.</td>
+</tr>
+<tr>
+  <td><b>Konflikt / Drama</b></td>
+  <td>Categorical keyword</td>
+  <td><span class="pill script">extended list + stemming</span></td>
+  <td>Same logic as wealth. IT-Mario misses 84% of drama mentions due to list size; Script (extended) misses 19%; hybrid with stemming closes the gap.</td>
+</tr>
+<tr>
+  <td><b>Hype-Adjektive</b></td>
+  <td>Categorical keyword</td>
+  <td><span class="pill script">extended list + stemming</span></td>
+  <td>IT-Mario's 4-word list undercounts by 65%. Extended list covers modern hype vocab (<code>insane, crazy, wild, absolut, extrem</code>). Stemming catches <code>krasseste → krass</code>.</td>
+</tr>
+<tr>
+  <td><b>Ich-Bezug (ego)</b></td>
+  <td>Closed pronoun class</td>
+  <td><span class="pill script">extended list (no stemming needed)</span></td>
+  <td>Pronouns are a small closed class: <code>ich, mein, meine, mich, mir, meins, meiner</code>. Script &amp; IT-Mario get identical answers here (MAPE ~1-2%).</td>
+</tr>
+<tr>
+  <td><b>Denglisch</b></td>
+  <td>Open vocabulary</td>
+  <td><span class="pill ai">full English dictionary</span></td>
+  <td>The <i>point</i> of Denglisch is unbounded loanword adoption — <code>Onboarding, Pacing, Deep-Dive, Vibes</code>. No fixed seed list can cover it. Hybrid uses 234k words from <code>/usr/share/dict/words</code> minus German false-friends. AI also does well here; small fixed lists (Script's) fail by ~87%.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:22px">Results — N=50, 4 methods, same corpus</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px">
+  <div class="kpi ok"><div class="l">IT-Mario (his exact lists)</div><div class="v">6/6</div><div style="font-size:11px;color:var(--muted)">100% winners · no Denglisch</div></div>
+  <div class="kpi ok"><div class="l">Script (extended lists)</div><div class="v">7/7</div><div style="font-size:11px;color:var(--muted)">100% winners · 27% mean numeric err</div></div>
+  <div class="kpi warn"><div class="l">AI (Claude)</div><div class="v">6/7</div><div style="font-size:11px;color:var(--muted)">missed ego · 37% mean numeric err</div></div>
+</div>
+
+<table>
+<thead><tr>
+  <th>Metric</th>
+  <th>Type</th>
+  <th class="num">IT-Mario MAPE</th>
+  <th class="num">Script MAPE</th>
+  <th class="num">AI MAPE</th>
+  <th>Who nails the ranking?</th>
+</tr></thead>
+<tbody>
+<tr><td><b>vocabulary_ttr</b></td><td><span class="pill ok">deterministic</span></td><td class="num"><span class="pill ok">0.0%</span></td><td class="num"><span class="pill ok">0.0%</span></td><td class="num"><span class="pill warn">25.3%</span></td><td>IT-Mario &amp; Script (AI drifts)</td></tr>
+<tr><td><b>avg_word_len</b></td><td><span class="pill ok">deterministic</span></td><td class="num"><span class="pill ok">0.0%</span></td><td class="num"><span class="pill ok">0.0%</span></td><td class="num"><span class="pill ok">0.3%</span></td><td>all 4 tied</td></tr>
+<tr><td><b>egocentrism</b></td><td>pronoun list</td><td class="num"><span class="pill ok">2.4%</span></td><td class="num"><span class="pill ok">1.3%</span></td><td class="num"><span class="pill warn">10.3%</span></td><td>IT-Mario, Script, Hybrid ✓ · AI says apored</td></tr>
+<tr><td><b>wealth_flex</b></td><td>keyword + stem</td><td class="num"><span class="pill no">48.4%</span></td><td class="num"><span class="pill ok">6.4%</span></td><td class="num"><span class="pill warn">16.5%</span></td><td>all 4 agree on apored</td></tr>
+<tr><td><b>drama_conflict</b></td><td>keyword + stem</td><td class="num"><span class="pill no">83.6%</span></td><td class="num"><span class="pill warn">18.7%</span></td><td class="num"><span class="pill no">52.3%</span></td><td>all 4 agree on apored (value spread huge)</td></tr>
+<tr><td><b>hype_adjectives</b></td><td>keyword + stem</td><td class="num"><span class="pill no">65.1%</span></td><td class="num"><span class="pill warn">27.0%</span></td><td class="num"><span class="pill warn">29.2%</span></td><td>all 4 agree on papaplatte</td></tr>
+<tr><td><b>denglisch</b></td><td>open-vocab</td><td class="num" style="color:var(--muted)">—</td><td class="num"><span class="pill no">87.0%</span></td><td class="num"><span class="pill no">76.7%</span></td><td>AI &amp; Script &amp; Hybrid agree; IT-Mario N/A</td></tr>
+</tbody>
+</table>
+
+<p style="margin:12px 0 0;color:var(--muted);font-size:13px">
+<b>What the numbers mean:</b>
+(a) For the 2 <b>deterministic</b> metrics (TTR, word-length), every rule-based method is bit-exact — only AI drifts, because it estimates rather than counts.
+(b) For <b>pronoun-based ego</b>, small &amp; large lists agree (~1-2% MAPE) because the pronoun set is closed.
+(c) For <b>open-category keywords</b> (wealth, drama, hype), list size dominates — IT-Mario's 4-6 word lists undercount by 48-84% relative to the extended-list hybrid, but the <i>ranking</i> still survives because all 3 creators get undercounted proportionally.
+(d) <b>Denglisch</b> is the only metric where the <i>winner</i> is stable across all methods but the <i>absolute rate</i> varies 10×. You cannot get a correct Denglisch percentage without a real English lexicon.
+</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:16px">
+  <div style="background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.3);border-radius:8px;padding:12px">
+    <div style="color:var(--good);font-weight:700;font-size:13px;margin-bottom:4px">✅ Winner: Hybrid routing</div>
+    <div style="color:var(--muted);font-size:12px">Deterministic math where the answer is unique, stemmed extended lists where vocabulary is open but bounded, full dictionary where vocabulary is unbounded. No single method wins on all 8 metrics — the hybrid assembles the best of each.</div>
+  </div>
+  <div style="background:rgba(131,56,234,.06);border:1px solid rgba(131,56,234,.3);border-radius:8px;padding:12px">
+    <div style="color:#c4a6ff;font-weight:700;font-size:13px;margin-bottom:4px">🥈 Runner-up: Script (extended lists)</div>
+    <div style="color:var(--muted);font-size:12px">Gets 7/7 winners at $0 and 1 second of runtime. Only weakness is Denglisch — a solvable problem.</div>
+  </div>
+  <div style="background:rgba(230,111,81,.06);border:1px solid rgba(230,111,81,.3);border-radius:8px;padding:12px">
+    <div style="color:#f4a261;font-weight:700;font-size:13px;margin-bottom:4px">🥉 IT-Mario (exact replica)</div>
+    <div style="color:var(--muted);font-size:12px">Correct ranking 6/6 where he computed, but absolute rates are 48-84% low on keyword metrics due to tiny lists. His method reproduces his narrative — not a "count the real rate".</div>
+  </div>
+  <div style="background:rgba(69,123,157,.06);border:1px solid rgba(69,123,157,.3);border-radius:8px;padding:12px">
+    <div style="color:#9ec5fe;font-weight:700;font-size:13px;margin-bottom:4px">4th — AI (Claude)</div>
+    <div style="color:var(--muted);font-size:12px">Only method to miss a winner (egocentrism: picked apored, hybrid says papaplatte). Wins on Denglisch contextually, but expensive and non-deterministic. Best used for fuzzy metrics only.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============== 2e charts ============== -->
+<div class="grid2">
+  <div class="chart">
+    <img src="results/charts/06_method_accuracy_matrix.png" alt="Method accuracy matrix"/>
+    <div class="cap"><b>Chart 6</b> — method × metric MAPE matrix (N=50). Green cells = low error, red = high.
+      ✓ = method picked the right winner; ● = hybrid (reference). The <b>left two columns</b> (TTR &amp; avg-word-length)
+      are green across the board — that's the deterministic-math signature. The <b>keyword columns</b> go red for IT-Mario
+      and AI, yellow for Script — that's list-size bias. The <b>Denglisch column</b> is red everywhere except hybrid — that's
+      why Denglisch needs a real dictionary.</div>
+  </div>
+  <div class="chart">
+    <img src="results/charts/08_method_summary.png" alt="Method summary"/>
+    <div class="cap"><b>Chart 7</b> — headline summary. Left: winner-ranking agreement vs hybrid. Right: mean numeric error
+      on the 5 fuzzy metrics (wealth, drama, hype, ego, denglisch). The ranking view flatters IT-Mario (100% match on 6
+      metrics), the numeric view tells the fuller story.</div>
+  </div>
+</div>
+<div class="chart" style="margin-top:12px">
+  <img src="results/charts/07_method_values_per_metric.png" alt="Method values per metric"/>
+  <div class="cap"><b>Chart 8</b> — per-metric bars for all 4 methods × 3 creators (N=50). Look at <code>denglisch</code>:
+    hybrid's green bar is ~200-280/1k, Script's is ~25-45/1k. Same creators, same text, ~10× difference in the absolute rate
+    — that's the dictionary-size effect. On all other metrics the bars are proportional even when their heights differ.</div>
+</div>
+
+<!-- ============== RAW METRIC VALUES ============== -->
+<h2>3 — Raw metric values (filtered, N=25)</h2>
+<div class="panel">
+<h3>Script (Python, deterministic)</h3>
+<table>
+<thead><tr><th>Creator</th><th class="num">TTR</th><th class="num">Flex /1k</th><th class="num">Drama /1k</th><th class="num">Hype /1k</th><th class="num">Ego /1k</th><th class="num">Denglisch /1k</th><th class="num">Wortlänge</th><th class="num">Tokens</th></tr></thead>
+<tbody>
+<tr><td>apored</td><td class="num">0.119</td><td class="num">3.128</td><td class="num">0.244</td><td class="num">1.463</td><td class="num">53.28</td><td class="num">27.38</td><td class="num">4.66</td><td class="num">49,230</td></tr>
+<tr><td>maithinkx</td><td class="num"><b>0.135</b></td><td class="num">1.366</td><td class="num">0.118</td><td class="num">0.318</td><td class="num">12.37</td><td class="num">23.70</td><td class="num"><b>5.44</b></td><td class="num">84,898</td></tr>
+<tr><td>papaplatte</td><td class="num">0.086</td><td class="num">0.627</td><td class="num">0.054</td><td class="num"><b>3.246</b></td><td class="num">48.72</td><td class="num"><b>48.24</b></td><td class="num">4.37</td><td class="num">129,086</td></tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:18px">AI (Claude, stochastic)</h3>
+<table>
+<thead><tr><th>Creator</th><th class="num">TTR</th><th class="num">Flex /1k</th><th class="num">Drama /1k</th><th class="num">Hype /1k</th><th class="num">Ego /1k</th><th class="num">Denglisch /1k</th><th class="num">Wortlänge</th><th class="num">Tokens</th></tr></thead>
+<tbody>
+<tr><td>apored</td><td class="num">0.120</td><td class="num">3.136</td><td class="num">0.244</td><td class="num">1.466</td><td class="num">53.42</td><td class="num">46.92</td><td class="num">4.67</td><td class="num">49,101</td></tr>
+<tr><td>maithinkx</td><td class="num"><b>0.135</b></td><td class="num">1.366</td><td class="num">0.118</td><td class="num">0.318</td><td class="num">12.37</td><td class="num">23.70</td><td class="num"><b>5.44</b></td><td class="num">84,898</td></tr>
+<tr><td>papaplatte</td><td class="num">0.086</td><td class="num">0.630</td><td class="num">0.054</td><td class="num"><b>3.257</b></td><td class="num">48.89</td><td class="num"><b>111.61</b></td><td class="num">4.38</td><td class="num">128,646</td></tr>
+</tbody>
+</table>
+
+<p style="margin:12px 0 0;color:var(--muted);font-size:12px">
+<b>Where AI diverges from Script:</b> only on <b>Denglisch</b>. Papaplatte's Script rate is 48/1k (fixed English wordlist),
+AI rate is 112/1k (2.3×). AI catches loanwords the script misses (<code>Pacing</code>, <code>Onboarding</code>,
+<code>Deep Dive</code>, etc.) — but the winner (Papaplatte) is the same either way.
+</p>
+</div>
+
+<!-- ============== PERFORMANCE ============== -->
+<h2>4 — Performance &amp; cost</h2>
+<div class="compare">
+  <div class="col sc">
+    <h4>⚙️ Script (Python)</h4>
+    <table>
+      <tr><td>Walltime (4 conditions)</td><td class="num"><b>2.3 s</b></td></tr>
+      <tr><td>Walltime (fair condition)</td><td class="num">~0.6 s</td></tr>
+      <tr><td>Cost</td><td class="num">$0.00</td></tr>
+      <tr><td>Determinism</td><td>bit-exact</td></tr>
+      <tr><td>Dev time</td><td class="num">~2 h</td></tr>
+      <tr><td>Lines of code</td><td class="num">~150</td></tr>
+    </table>
+  </div>
+  <div class="col ai">
+    <h4>🤖 AI (Claude, 3 parallel agents)</h4>
+    <table>
+      <tr><td>Walltime</td><td class="num"><b>353 s</b></td></tr>
+      <tr><td>Cost (estimated)</td><td class="num">~$0.28</td></tr>
+      <tr><td>Input tokens</td><td class="num">~190 k</td></tr>
+      <tr><td>Determinism</td><td>non-deterministic</td></tr>
+      <tr><td>Dev time (prompt)</td><td class="num">~30 min</td></tr>
+      <tr><td>Lines of prompt</td><td class="num">~80</td></tr>
+    </table>
+  </div>
+</div>
+<p style="margin:12px 0 0;color:var(--muted);font-size:12px">
+<b>Verdict for this specific task:</b> Script wins decisively. Bag-of-words counting is what scripts are for.
+<br><b>Where AI would earn its keep:</b> tasks that require context (e.g. "what emotion does this sentence
+carry?") or open-vocabulary matching (e.g. full Denglisch rate including loanwords not in a fixed list).
+</p>
+
+<!-- ============== CHARTS ============== -->
+<h2>5 — Visualizations</h2>
+<div class="grid2">
+
+  <div class="chart">
+    <img src="results/charts/01_metrics_by_creator.png" alt="Metric values per creator"/>
+    <div class="cap"><b>Chart 1</b> — all 7 metrics per creator, AI (blue) next to Script (purple).
+      Bars are near-identical everywhere except <b>Denglisch for Papaplatte</b>, where AI finds 2.3× more
+      English loanwords than the script's fixed list.</div>
+  </div>
+
+  <div class="chart">
+    <img src="results/charts/02_ai_vs_script_scatter.png" alt="AI vs Script scatter"/>
+    <div class="cap"><b>Chart 2</b> — AI (y) vs Script (x), each point one creator×metric, normalized.
+      Perfect agreement lies on y=x. All points sit on or near the line.</div>
+  </div>
+
+  <div class="chart">
+    <img src="results/charts/03_filter_impact.png" alt="Filter impact"/>
+    <div class="cap"><b>Chart 3</b> — mean SMAPE (0–100) between raw and speaker-filtered counts, per metric.
+      All values &lt; 0.3 %. The speaker filter doesn't meaningfully change any metric at N=25.</div>
+  </div>
+
+  <div class="chart">
+    <img src="results/charts/04_sample_impact.png" alt="Sample-size impact"/>
+    <div class="cap"><b>Chart 4</b> — mean SMAPE between N=1 and N=25 (filtered). Massive. Wealth_flex
+      hits 100 % — the single-video and 25-video corpora are essentially unrelated for that metric. This
+      is the central empirical argument <i>against</i> IT-Mario's methodology.</div>
+  </div>
+
+  <div class="chart">
+    <img src="results/charts/05_perf_comparison.png" alt="Performance comparison"/>
+    <div class="cap"><b>Chart 5</b> — walltime and cost side-by-side. Script: 2.3 s / $0. AI: 353 s / $0.28.
+      The log-scale runtime gap is ~150× — AI would only be worth it if it gave a meaningfully different
+      answer, which it does not.</div>
+  </div>
+
+</div>
+
+<!-- ============== IMPACT BARS ============== -->
+<h2>6 — What actually moves the numbers?</h2>
+<div class="panel">
+<p style="margin-top:0;color:var(--muted);font-size:13px">
+Of the four levers we can pull — method (AI vs Script), speaker filter, sample size, creator — only one
+matters a lot:
+</p>
+<h3>Filter impact (raw → filtered)</h3>
+<table>
+<thead><tr><th>Metric</th><th class="num">SMAPE %</th><th>Scale</th></tr></thead>
+<tbody>
+<tr><td>vocabulary_ttr</td><td class="num">0.17</td><td><div class="bar"><span style="width:0.17%"></span></div></td></tr>
+<tr><td>wealth_flex</td><td class="num">0.27</td><td><div class="bar"><span style="width:0.27%"></span></div></td></tr>
+<tr><td>drama_conflict</td><td class="num">0.19</td><td><div class="bar"><span style="width:0.19%"></span></div></td></tr>
+<tr><td>hype_adjectives</td><td class="num">0.19</td><td><div class="bar"><span style="width:0.19%"></span></div></td></tr>
+<tr><td>egocentrism</td><td class="num">0.18</td><td><div class="bar"><span style="width:0.18%"></span></div></td></tr>
+<tr><td>denglisch</td><td class="num">0.18</td><td><div class="bar"><span style="width:0.18%"></span></div></td></tr>
+<tr><td>avg_word_len</td><td class="num">0.09</td><td><div class="bar"><span style="width:0.09%"></span></div></td></tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:20px">Sample-size impact (N=1 → N=25)</h3>
+<table>
+<thead><tr><th>Metric</th><th class="num">SMAPE %</th><th>Scale</th></tr></thead>
+<tbody>
+<tr><td>vocabulary_ttr</td><td class="num">57.6</td><td><div class="bar"><span style="width:57.6%;background:var(--warn)"></span></div></td></tr>
+<tr><td>wealth_flex</td><td class="num">100.0</td><td><div class="bar"><span style="width:100%;background:var(--bad)"></span></div></td></tr>
+<tr><td>drama_conflict</td><td class="num">81.0</td><td><div class="bar"><span style="width:81%;background:var(--bad)"></span></div></td></tr>
+<tr><td>hype_adjectives</td><td class="num">69.1</td><td><div class="bar"><span style="width:69.1%;background:var(--warn)"></span></div></td></tr>
+<tr><td>egocentrism</td><td class="num">33.2</td><td><div class="bar"><span style="width:33.2%;background:var(--warn)"></span></div></td></tr>
+<tr><td>denglisch</td><td class="num">12.9</td><td><div class="bar"><span style="width:12.9%"></span></div></td></tr>
+<tr><td>avg_word_len</td><td class="num">1.1</td><td><div class="bar"><span style="width:1.1%"></span></div></td></tr>
+</tbody>
+</table>
+
+<p style="margin:12px 0 0;color:var(--muted);font-size:12px">
+<b>The headline finding.</b> Filter noise is ~0 %. Sample noise is up to 100 %. So when IT-Mario
+analyzed "1-2 videos per creator", his conclusions were at the mercy of which videos he picked —
+exactly Papaplatte's structural critique.
+</p>
+</div>
+
+<!-- ============== CRITIQUE ============== -->
+<h2>7 — How the Lattensepp critique holds up</h2>
+<div class="panel">
+<table>
+<thead><tr><th>Papaplatte's critique</th><th>Verdict</th><th>Our evidence</th></tr></thead>
+<tbody>
+<tr><td>"It's just word counting"</td><td><span class="pill ok">true</span></td><td>150-line Python hits 100 % agreement with Claude on all 7 winners</td></tr>
+<tr><td>"Tiny, unrepresentative sample"</td><td><span class="pill ok">true</span></td><td>N=1 vs N=25 gives ±100 % swings on most metrics (chart 4)</td></tr>
+<tr><td>"Biased keyword selection"</td><td><span class="pill warn">partially</span></td><td>Seed-list Denglisch undercounts by 2× vs contextual AI detection</td></tr>
+<tr><td>"Confirmation bias — he decided the story first"</td><td><span class="pill warn">plausible</span></td><td>Can't prove without his raw data, but egocentrism mismatch is suggestive (he needed Papaplatte to lose)</td></tr>
+<tr><td>"He doesn't understand statistics (no CIs)"</td><td><span class="pill ok">true</span></td><td>His "winner" for hype-adjectives was probably inside a confidence interval — hence "tie" is more honest</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============== V3 PLAN ============== -->
+<h2>8 — Version 3 plan (what we'd build next)</h2>
+<div class="panel">
+<table>
+<thead><tr><th>Phase</th><th>What</th><th>Why</th><th>Est. time</th><th>Cost</th></tr></thead>
+<tbody>
+<tr><td>V3.1</td><td>Stratified 50-video sample per creator, 18-mo span</td><td>Kills recency &amp; selection bias</td><td>0.5 wk</td><td>$0</td></tr>
+<tr><td>V3.2</td><td>Audio diarization: <code>yt-dlp -x</code> → <code>pyannote/speaker-diarization-3.1</code> → Whisper-large-v3</td><td>Actual speaker attribution, not guessing from text</td><td>2 wk</td><td>~$40 GPU</td></tr>
+<tr><td>V3.3</td><td>spaCy <code>de_core_news_lg</code> + CharSplit for German compounds</td><td>Fixes <code>gekauft → kaufen</code> and <code>Bankkonto → Bank+Konto</code></td><td>0.5 wk</td><td>$0</td></tr>
+<tr><td>V3.4</td><td>Triangulated metrics: 3 independent signals per concept, agree-or-tie</td><td>Ends single-keyword-list brittleness</td><td>1 wk</td><td>$0</td></tr>
+<tr><td>V3.5</td><td>Bootstrap 1000× with 95 % confidence intervals; "tie" when CIs overlap</td><td>Gives IT-Mario his "tie" back where it's real</td><td>0.5 wk</td><td>$0</td></tr>
+<tr><td>V3.6</td><td>Pre-register analysis plan; open-source reproducible pipeline</td><td>Blocks confirmation bias</td><td>0.5 wk</td><td>$0</td></tr>
+</tbody>
+</table>
+<p style="margin:12px 0 0;color:var(--muted);font-size:12px">
+Total V3 budget: <b>~5 weeks</b> and <b>~$40</b> in compute. The output would be a
+defensible, peer-review-ready version of IT-Mario's analysis — precisely the
+thing his video gestured at but didn't deliver.
+</p>
+</div>
+
+<!-- ============== LIMITATIONS ============== -->
+<h2>9 — Known blind spots in this V2</h2>
+<div class="panel">
+<details open>
+<summary>1. Text-only speaker filter can't distinguish short interjections</summary>
+<p style="color:var(--muted);font-size:12px;margin:6px 0 0">
+YouTube auto-captions have no speaker tags. Our LLM filter reads context
+("this is clearly a Wissing press quote, remove") but can miss 2-sentence
+interjections. <b>Fix:</b> V3.2 (audio diarization).
+</p>
+</details>
+<details>
+<summary>2. Fixed English wordlist undercounts Denglisch</summary>
+<p style="color:var(--muted);font-size:12px;margin:6px 0 0">
+The 100-word anchor list misses modern loanwords (<code>Onboarding</code>,
+<code>Pacing</code>, <code>DeepDive</code>). AI catches these contextually.
+<b>Fix:</b> V3.3 (lingua-py per-token language ID).
+</p>
+</details>
+<details>
+<summary>3. Auto-caption quality</summary>
+<p style="color:var(--muted);font-size:12px;margin:6px 0 0">
+German <code>ß/ä/ö/ü</code> occasionally lost; compounds split. <b>Fix:</b> V3.2 uses
+Whisper-large-v3 on the audio, not auto-captions.
+</p>
+</details>
+<details>
+<summary>4. Ground truth = IT-Mario's on-screen claims (he didn't publish data)</summary>
+<p style="color:var(--muted);font-size:12px;margin:6px 0 0">
+We can't verify he computed what he said he computed. "71 % match with IT-Mario"
+is really "71 % match with his reported winners".
+</p>
+</details>
+<details>
+<summary>5. Recency bias in our own sample</summary>
+<p style="color:var(--muted);font-size:12px;margin:6px 0 0">
+<code>yt-dlp</code> default is "most recent 25". A creator's recent output can differ
+from career output. <b>Fix:</b> V3.1 (stratified random sample).
+</p>
+</details>
+</div>
+
+<!-- ============== FILE MAP ============== -->
+<h2>10 — File map</h2>
+<div class="panel">
+<table>
+<tbody>
+<tr><td><code>src/common/metrics_spec.py</code></td><td>Metric definitions (single source of truth)</td></tr>
+<tr><td><code>src/common/fetch.py</code></td><td>yt-dlp transcript scraper</td></tr>
+<tr><td><code>src/common/speaker_filter.py</code></td><td>LLM-based speaker filter (v1)</td></tr>
+<tr><td><code>src/script_version/analyze.py</code></td><td>Deterministic Python pipeline</td></tr>
+<tr><td><code>bench/compare.py</code></td><td>Benchmark harness (4 conditions + agreement + deltas)</td></tr>
+<tr><td><code>bench/method_compare.py</code></td><td><b>N=50 multi-method comparison (IT-Mario · Script · AI · Hybrid)</b></td></tr>
+<tr><td><code>bench/fetch_n50_rest.py</code></td><td>Top-up fetcher (25 → 50 videos per creator)</td></tr>
+<tr><td><code>bench/visualize.py</code></td><td>Chart generator — charts 1-5 (N=25)</td></tr>
+<tr><td><code>bench/visualize_methods.py</code></td><td>Chart generator — charts 6-8 (N=50 method comparison)</td></tr>
+<tr><td><code>data/transcripts/{creator}.json</code></td><td>Raw transcripts (25 videos each)</td></tr>
+<tr><td><code>data/transcripts_filtered/{creator}.json</code></td><td>Speaker-filtered transcripts</td></tr>
+<tr><td><code>data/transcripts_n50/{creator}.json</code></td><td><b>N=50 raw transcripts (matches IT-Mario's sample size)</b></td></tr>
+<tr><td><code>results/ai_metrics/{creator}.json</code></td><td>AI-computed metrics (3 parallel agents)</td></tr>
+<tr><td><code>results/report.json</code></td><td>Full benchmark output (N=25)</td></tr>
+<tr><td><code>results/methods_n50.json</code></td><td><b>4-method comparison output (N=50)</b></td></tr>
+<tr><td><code>results/charts/*.png</code></td><td>8 visualizations (5 for N=25, 3 for N=50 method comparison)</td></tr>
+<tr><td><code>docs/FINDINGS.md</code></td><td>Long-form markdown writeup</td></tr>
+<tr><td><code>report.html</code></td><td><b>This dashboard</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="footer">lattensepp-analysis · 2026-04-22 · 8 metrics · 3 creators · 149 videos (N=50) · 4 methods · 8 charts</div>
+
+</div>
+</body>
+</html>

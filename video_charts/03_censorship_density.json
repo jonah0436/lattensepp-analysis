@@ -1,0 +1,101 @@
+{
+  "title": "YouTube zensiert Papaplatte 38-mal häufiger als Apored",
+  "subtitle": "Zensur-Marker pro 1k Tokens über 50 Videos pro Creator",
+  "chart_type": "bar",
+  "x_axis": {
+    "label": "Creator",
+    "values": [
+      "Papaplatte",
+      "Apored",
+      "MaiThinkX"
+    ]
+  },
+  "y_axis": {
+    "label": "[__] Zensur-Marker pro 1k Tokens"
+  },
+  "series": [
+    {
+      "name": "Zensur-Dichte",
+      "data": [
+        1.6305,
+        0.0422,
+        0.0
+      ],
+      "color_hint": "papaplatte-red"
+    }
+  ],
+  "secondary_series": [
+    {
+      "name": "Absolute Zensuren (N=50 Videos pro Creator)",
+      "values": [
+        515,
+        4,
+        0
+      ]
+    },
+    {
+      "name": "Videos mit mindestens einem [__]",
+      "values": [
+        "48/50",
+        "2/50",
+        "0/50"
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "x": 0,
+      "y": 1.63,
+      "text": "Papaplatte: 515 Zensuren in 48 von 50 Videos",
+      "style": "callout"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "text": "MaiThinkX: 0 Zensuren (Pure-Science-Kanal)",
+      "style": "callout"
+    },
+    {
+      "x": 0,
+      "y": 1.2,
+      "text": "38× höher als Apored",
+      "style": "headline"
+    }
+  ],
+  "methodology": "YouTube auto-caption [__] censor-marker density across 150 videos (50 per creator). Categorized via Claude/OpenRouter on the top-10-by-censor-count videos per creator (30 videos, up to 20 censor sentences each).",
+  "note_vs_original_spec": "Original T07 used Whisper vs auto-captions on 3 Papaplatte videos. Pivoted to full-corpus [__] density because OpenRouter does not host Whisper and the user declined both OpenAI and local torch install. This covers ~50x more data.",
+  "verdict_on_papaplatte_claim": "supported",
+  "headline_number": "38×",
+  "headline_subtitle": "so viel häufiger hat YouTube Papaplatte zensiert als Apored",
+  "example_censored_sentences": [
+    {
+      "sentence": "…et halt vorne so runter ne ja ja das ist voll schwer ich weiß nicht genau wie man das genau macht aber hier das so dass der hier oben so drauf tricky [__] vielleicht muss man wieso die Jungs in so ein Drive vi habe ich auch überlegt habe ich auch überlegt ich te mal so also dave ist bei 840 in die 80 rein Scheiße der ein neues schwettefunden oh shit das die ne met das die Meter okay e ganz kurz no",
+      "likely_word": "?",
+      "category": "unknown"
+    },
+    {
+      "sentence": "[__] Minute, ich bin was ist er denn so sauer als die 31?",
+      "likely_word": "?",
+      "category": "unknown"
+    },
+    {
+      "sentence": "[__] euch, [gelächter] Diger.",
+      "likely_word": "Fick",
+      "category": "profanity"
+    },
+    {
+      "sentence": "[__] [gelächter] ich fick e Penner, ihr gierigen Schwzees [gelächter] Mal jedes Mal will jeder in der ersten Runde Top 5 sein.",
+      "likely_word": "Fick",
+      "category": "profanity"
+    },
+    {
+      "sentence": "[__] ich euch.",
+      "likely_word": "Fick",
+      "category": "profanity"
+    }
+  ],
+  "footnote": "Deterministisches [__] counting + Claude-Haiku-4.5 via OpenRouter für Kategorisierung. Kosten: $0.028. Original T07-Spec sah Whisper-Transkription auf 3 Samples vor; OpenRouter hostet keine Audio-Modelle, daher Pivot auf Zensur-Dichte über die volle N=150 Korpus.",
+  "source_path": "results/profanity_delta.json",
+  "generator_script": "bench/export_video_charts.py + bench/censorship_analysis.py",
+  "generated_at": "2026-04-22T12:37:33.460381+00:00"
+}

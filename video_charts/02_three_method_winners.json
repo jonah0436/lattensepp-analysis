@@ -1,0 +1,86 @@
+{
+  "title": "3 Methoden finden denselben Sieger — 6/7 Mal",
+  "subtitle": "Value each method produced for the metric's winning creator",
+  "chart_type": "grouped_bar",
+  "x_axis": {
+    "label": "Metric",
+    "values": [
+      "TTR",
+      "Wealth",
+      "Drama",
+      "Hype",
+      "Ego",
+      "Denglisch",
+      "Word len"
+    ]
+  },
+  "y_axis": {
+    "label": "Value for winning creator",
+    "values": null
+  },
+  "series": [
+    {
+      "name": "IT-Mario replica",
+      "data": [
+        0.108987,
+        1.190928,
+        0.042157,
+        1.431041,
+        48.962495,
+        24.330862,
+        5.42531
+      ]
+    },
+    {
+      "name": "AI agents",
+      "data": [
+        0.42,
+        18.4,
+        8.6,
+        18.0,
+        105.0,
+        33.3,
+        7.2
+      ]
+    },
+    {
+      "name": "Hybrid",
+      "data": [
+        0.108987,
+        2.603179,
+        0.432107,
+        3.096367,
+        49.655854,
+        284.935445,
+        5.42531
+      ]
+    }
+  ],
+  "winning_creators": [
+    "maithinkx",
+    "apored",
+    "apored",
+    "papaplatte",
+    "papaplatte",
+    "papaplatte",
+    "maithinkx"
+  ],
+  "annotations": [
+    {
+      "x": 3,
+      "y": 0,
+      "text": "Hype: IT-Mario declared a tie (papaplatte & apored) — all 3 methods put papaplatte #1.",
+      "style": "callout"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "text": "Ego: AI picks apored, replica & hybrid pick papaplatte (only divergence on winner identity).",
+      "style": "callout"
+    }
+  ],
+  "footnote": "Scales differ per metric — bars within each cluster are comparable, across clusters not.",
+  "source_path": "results/methods_n50_clean.json",
+  "generator_script": "bench/export_video_charts.py",
+  "generated_at": "2026-04-22T17:25:28Z"
+}

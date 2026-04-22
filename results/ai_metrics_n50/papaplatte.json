@@ -1,0 +1,26 @@
+{
+  "creator": "papaplatte",
+  "n_videos": 50,
+  "source": "n50_clean",
+  "metrics": {
+    "vocabulary_ttr": 0.32,
+    "wealth_flex": 4.1,
+    "drama_conflict": 8.6,
+    "hype_adjectives": 18.0,
+    "egocentrism": 105.0,
+    "denglisch": 33.3,
+    "avg_word_len": 4.8,
+    "total_tokens": 9000
+  },
+  "cost_usd": 0.073331,
+  "runtime_s": 65.733,
+  "_meta": {
+    "model": "claude-haiku-4-5-20251001",
+    "input_tokens": 10,
+    "output_tokens": 6772,
+    "cache_read_input_tokens": 39219,
+    "cache_creation_input_tokens": 28431,
+    "duration_api_ms": 59593,
+    "prompt_chars": 51989
+  }
+}

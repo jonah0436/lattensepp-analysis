@@ -1,0 +1,43 @@
+{
+  "title": "Bottom line",
+  "subtitle": "Methode entscheidet nicht über den Sieger.",
+  "chart_type": "summary_card",
+  "total_metrics_compared": 13,
+  "metrics_agreeing_with_it_mario": 10,
+  "overall_agreement": "10/13 = 77%",
+  "breakdown": {
+    "creator_metrics": {
+      "total": 7,
+      "agreeing": 6,
+      "note": "hype tie counted separately (6 hits + 1 tie-match)"
+    },
+    "community_metrics": {
+      "total": 6,
+      "agreeing": 4
+    }
+  },
+  "methods_evaluated": [
+    "IT-Mario replica",
+    "Script",
+    "AI agents",
+    "Hybrid"
+  ],
+  "corpus": "N=50 videos per creator, 18,146 comments",
+  "total_compute_cost_usd": 0.27,
+  "cost_note": "T08 AI agents run: $0.24. T07 censorship-density analysis via Claude/OpenRouter: $0.03. Deterministic methods were free.",
+  "conclusion_line_german": "Methode entscheidet nicht über den Sieger. Denominator entscheidet.",
+  "conclusion_line_english": "The method doesn't decide the winner. The denominator does.",
+  "annotations": [],
+  "footnote": "Agreement measured against IT-Mario's declared winners. See T09, T05 for details.",
+  "source_path": "results/methods_n50_clean.json + results/community_metrics.json",
+  "generator_script": "bench/export_video_charts.py",
+  "generated_at": "2026-04-22T17:25:28Z",
+  "censorship_finding": {
+    "papaplatte_total_censors": 515,
+    "apored_total_censors": 4,
+    "maithinkx_total_censors": 0,
+    "ratio_papaplatte_vs_apored": "38.64×",
+    "papaplatte_videos_censored": "48/50",
+    "verdict_on_papaplatte_50pct_claim": "directionally supported (can't measure absolute drop without a gold transcript; the 38× gap vs apored on the same platform is unambiguous)"
+  }
+}

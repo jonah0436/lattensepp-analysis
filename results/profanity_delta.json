@@ -1,0 +1,1335 @@
+{
+  "methodology": "YouTube auto-caption [__] censor-marker density across 150 videos (50 per creator). Categorized via Claude/OpenRouter on the top-10-by-censor-count videos per creator (30 videos, up to 20 censor sentences each).",
+  "note_vs_original_spec": "Original T07 used Whisper vs auto-captions on 3 Papaplatte videos. Pivoted to full-corpus [__] density because OpenRouter does not host Whisper and the user declined both OpenAI and local torch install. This covers ~50x more data.",
+  "per_video": [
+    {
+      "creator": "apored",
+      "video_id": "aOJqKnkPty8",
+      "title": "ApoRed - Roter Lambo 🌴☀️  (prod. Stard Ova)",
+      "censor_count": 2,
+      "token_count": 191,
+      "density_per_1k_tokens": 10.4712
+    },
+    {
+      "creator": "apored",
+      "video_id": "5ULcCJtQUeM",
+      "title": "The complete truth (No prank)",
+      "censor_count": 2,
+      "token_count": 6953,
+      "density_per_1k_tokens": 0.2876
+    },
+    {
+      "creator": "apored",
+      "video_id": "U5NcTi7NkFk",
+      "title": "ApoRed x RDO - GHETTO (Official Music Video)",
+      "censor_count": 0,
+      "token_count": 189,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "uEKmaXz40kg",
+      "title": "ApoRed - Jede Nacht (Official Video)",
+      "censor_count": 0,
+      "token_count": 345,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "fsKouaaD7og",
+      "title": "Kellner ?",
+      "censor_count": 0,
+      "token_count": 1082,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "6uCMmXTAVlM",
+      "title": "Meine Haartransplantation in der Türkei 🇹🇷 Ergebnisse nach 3 Jahren | Vorher & Nachher",
+      "censor_count": 0,
+      "token_count": 3163,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "pwTgm9TNXpA",
+      "title": "Meine 90 Tage FITNESS Transformation! ApoRed",
+      "censor_count": 0,
+      "token_count": 1432,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "GpLBn7HHyRU",
+      "title": "ApoRed - Multimillionär (Official Video) prod. by Anwalt",
+      "censor_count": 0,
+      "token_count": 111,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "joZC7WPH5CM",
+      "title": "Why I was STRIKED",
+      "censor_count": 0,
+      "token_count": 2000,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "5BMVbHIqsss",
+      "title": "ES REICHT!!",
+      "censor_count": 0,
+      "token_count": 191,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "xSrA4LqCQUE",
+      "title": "Mein 5 Mio PENTHOUSE in DUBAI",
+      "censor_count": 0,
+      "token_count": 2440,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "xScnYz7obzc",
+      "title": "Alles nur Greenscreen 😂 FAKE",
+      "censor_count": 0,
+      "token_count": 1447,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "kdSEQZ35dss",
+      "title": "Ich zeige euch ALLES! Millionen | Auto | Wohnung",
+      "censor_count": 0,
+      "token_count": 1630,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "2TPc1iQ5QJ8",
+      "title": "Wir Testen Top FOOD SPOTS in ISTANBUL ! 🇹🇷",
+      "censor_count": 0,
+      "token_count": 2776,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "EKO2_R05mSA",
+      "title": "3.6 million in tax debts! The whole truth",
+      "censor_count": 0,
+      "token_count": 1921,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "EGqDxqmAKbY",
+      "title": "ApoRed der Trading Hase 💰",
+      "censor_count": 0,
+      "token_count": 2120,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "OiUbf9zJJB8",
+      "title": "DUBAI ist die NEUE META 🏝",
+      "censor_count": 0,
+      "token_count": 3261,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "6hggGpsux4Y",
+      "title": "LASST Mois in RUHE 😡😡",
+      "censor_count": 0,
+      "token_count": 2256,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "Sio7kkS7hv4",
+      "title": "BURGER ESSEN mit MilitanteVeganerin und Leon Machere 😛🍔",
+      "censor_count": 0,
+      "token_count": 5424,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "2asUn9ek0mQ",
+      "title": "Vegan VS Fleisch Restaurant 🍖 🥑 | Was schmeckt besser 😋",
+      "censor_count": 0,
+      "token_count": 2224,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "u0mxkMuEVBo",
+      "title": "Wir ESSEN die SCHÄRFSTE CHILLI auf der Straße 🌶 🔥 | ApoRed & Leon Machere",
+      "censor_count": 0,
+      "token_count": 1071,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "Tw-DF05V4mc",
+      "title": "Wir testen Döner mit der schlechtesten Bewertung 👎🤮 | @ApoRed  & @LeonMachere",
+      "censor_count": 0,
+      "token_count": 1438,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "AcrEOxLX2Kg",
+      "title": "ApoRed is a MILLIONAIRE",
+      "censor_count": 0,
+      "token_count": 1858,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "Vl64P7ghcfg",
+      "title": "ABK UND APORED TESTEN DEN BESTEN BURGER DEUTSCHLANDS!",
+      "censor_count": 0,
+      "token_count": 1017,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "1xH37Rr_-uM",
+      "title": "28KG LOST | MY TRANSFORMATION",
+      "censor_count": 0,
+      "token_count": 2736,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "F69RFJ_Qujg",
+      "title": "ABK und ApoRed erledigen Quests in Wuppertal",
+      "censor_count": 0,
+      "token_count": 897,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "pKmXh93Qfhk",
+      "title": "ABK and ApoRed at the university 👨🏻‍🎓",
+      "censor_count": 0,
+      "token_count": 666,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "WO4phvUvB2g",
+      "title": "LASST Ron Bielecki in RUHE",
+      "censor_count": 0,
+      "token_count": 1892,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "YqTYKyMnYU8",
+      "title": "MEIN NEUER NACHBAR @AbuGoku9999 😍🥰",
+      "censor_count": 0,
+      "token_count": 1919,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "oVkVUO2FzFE",
+      "title": "Das TÜRKISCHE MC DONALDS aber in BESSER? 😱🤤",
+      "censor_count": 0,
+      "token_count": 1833,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "vuaMwquWoNY",
+      "title": "THE BEST BURGERS in THE BEST MEAT SHOP in the WORLD? 😨🤤",
+      "censor_count": 0,
+      "token_count": 2186,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "pB2p1GoewD0",
+      "title": "FAKE SACHEN auf ISTANBUL BAZAR KAUFEN + HÄNDLER RASTET AUS 😂",
+      "censor_count": 0,
+      "token_count": 3529,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "av9RrVG0CXE",
+      "title": "KFC vs. Turkish KFC! Best local chicken in Turkey? 😱",
+      "censor_count": 0,
+      "token_count": 2326,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "bcL4VUzVfsc",
+      "title": "90 CENT DÜRÜM! Türkiye is a DREAM for EATERS! 🤩",
+      "censor_count": 0,
+      "token_count": 1642,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "C1CZ7Dr6Vd4",
+      "title": "MÖBEL SHOPPING in ISTANBUL und GÜNSTIGE FOODSPOTS TESTEN! 😲",
+      "censor_count": 0,
+      "token_count": 2199,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "OjR1NjYrPQ8",
+      "title": "MY VERY FIRST SONG! SO EMBARRASSING 😂 (DISSTRACK)",
+      "censor_count": 0,
+      "token_count": 2550,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "oT7JLxZwRtU",
+      "title": "IT'S OFFICIAL! 😱💥",
+      "censor_count": 0,
+      "token_count": 2148,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "ZvqQDZcdFtg",
+      "title": "Die ÄLTESTE MOSCHEE in ISTANBUL! 😨🕌",
+      "censor_count": 0,
+      "token_count": 2579,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "t6zUuXDocyo",
+      "title": "KuchenTV ES GEHT ZU WEIT 😡",
+      "censor_count": 0,
+      "token_count": 1714,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "AVQxb0hzZ1k",
+      "title": "KSFREAK KOMM 1vs1!",
+      "censor_count": 0,
+      "token_count": 1149,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "bHBo640fze0",
+      "title": "hallo :D",
+      "censor_count": 0,
+      "token_count": 1473,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "cZjyWQbwD_k",
+      "title": "Mein Emotionalster Realtalk...",
+      "censor_count": 0,
+      "token_count": 4538,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "Ff_Wf_blJOs",
+      "title": "KSFREAK ist das DEIN ERNST? 😂🤣",
+      "censor_count": 0,
+      "token_count": 1303,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "HMZGR4_xG0c",
+      "title": "McDonalds vs Burger King in Istanbul | Was schmeckt besser?",
+      "censor_count": 0,
+      "token_count": 3146,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "tx21vH0Fbd0",
+      "title": "Das BEKANNTESTE Restaurant in Istanbul | Nusret - Der Beste Burger?",
+      "censor_count": 0,
+      "token_count": 2443,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "8swpK9wIBHU",
+      "title": "ApoRed showcases NEW APARTMENT | XXL Tour",
+      "censor_count": 0,
+      "token_count": 2401,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "iEm6Me5rFpE",
+      "title": "ApoRed is back...! (What happened?)",
+      "censor_count": 0,
+      "token_count": 281,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "ZNxtrJaq5wc",
+      "title": "ApoRed - Lambo Gallardo (Official Video)",
+      "censor_count": 0,
+      "token_count": 269,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "UC_U0l2E-Rs",
+      "title": "ApoRed - Billo (Official Video)",
+      "censor_count": 0,
+      "token_count": 204,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "apored",
+      "video_id": "yBiwgpD9ans",
+      "title": "ApoRed - Yalla Habibi (Official Video)",
+      "censor_count": 0,
+      "token_count": 321,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "nBDi8WjfAMA",
+      "title": "Ich habe PFAS im Blut | Ewigkeitschemikalien",
+      "censor_count": 0,
+      "token_count": 3390,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "7v4PBBo98Qw",
+      "title": "ME/CFS: Keine Kraft mehr",
+      "censor_count": 0,
+      "token_count": 3759,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "JTLau8e-CUo",
+      "title": "Krebs durch Süßstoffe?",
+      "censor_count": 0,
+      "token_count": 4150,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "gMnI5k3m45g",
+      "title": "Wir haben etwas übersehen.",
+      "censor_count": 0,
+      "token_count": 3323,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "kvDa-p5Hl7A",
+      "title": "Kaputt gezüchtet: Von Tierqual bis Hungersnot",
+      "censor_count": 0,
+      "token_count": 4119,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "u-9EvVPrDE0",
+      "title": "Handy, WLAN, 5G – So gefährlich ist Strahlung",
+      "censor_count": 0,
+      "token_count": 4010,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "WRUfgZZIFZA",
+      "title": "Meine neue Doku",
+      "censor_count": 0,
+      "token_count": 5480,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "a2OsUsnHeJM",
+      "title": "Protein-Hype wissenschaftlich geprüft",
+      "censor_count": 0,
+      "token_count": 2687,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "qtXABkcRpnE",
+      "title": "Steuerverschwendung in der Wissenschaft",
+      "censor_count": 0,
+      "token_count": 4071,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "8TaZYY9t8IE",
+      "title": "Abnehmspritze wissenschaftlich geprüft | Ozempic & Co",
+      "censor_count": 0,
+      "token_count": 2832,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "CgGITxbcA1o",
+      "title": "Chronische Schmerzen | Wie das System Schmerzen fördert",
+      "censor_count": 0,
+      "token_count": 4091,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "4r4Qg5SPbI4",
+      "title": "Zucker vs. Kalorien | Was ist das Problem?",
+      "censor_count": 0,
+      "token_count": 4020,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "PjGZ8ORHZc8",
+      "title": "Pharma-Skandale | Wer kontrolliert das Milliardengeschäft?",
+      "censor_count": 0,
+      "token_count": 3711,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "p_gbuXacPq8",
+      "title": "Verschwörungstheorien erklärt | Falsifizierbarkeit",
+      "censor_count": 0,
+      "token_count": 2102,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "Wc2ZvhBwu90",
+      "title": "So entlarvst du Bullshit",
+      "censor_count": 0,
+      "token_count": 2142,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "1nnKydcqmDI",
+      "title": "Energiewende am Ende?",
+      "censor_count": 0,
+      "token_count": 5124,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "Tdgb6NvUjhk",
+      "title": "Kipppunkte | Die Wahrheit hinter den Modellen",
+      "censor_count": 0,
+      "token_count": 3439,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "0Adje4S-3kc",
+      "title": "Ihr seid dumm.",
+      "censor_count": 0,
+      "token_count": 824,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "wdNhtZOGxBw",
+      "title": "When the United States tip over | An analysis",
+      "censor_count": 0,
+      "token_count": 4103,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "FGAyYl3ZICw",
+      "title": "Rassismus wissenschaftlich geprüft",
+      "censor_count": 0,
+      "token_count": 4126,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "FidQmO5QbaY",
+      "title": "Volker Wissing EXPOSED",
+      "censor_count": 0,
+      "token_count": 3148,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "oNAmSWYAxk8",
+      "title": "Was wir aus AnniTheDuck lernen sollten",
+      "censor_count": 0,
+      "token_count": 2464,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "-jPx81Y10oE",
+      "title": "Fußball & Hirnschäden | Chronisch-Traumatische Enzephalopathie",
+      "censor_count": 0,
+      "token_count": 2419,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "pfvwnmPhIb0",
+      "title": "Gendern wissenschaftlich geprüft",
+      "censor_count": 0,
+      "token_count": 3954,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "bMe41rdpLh8",
+      "title": "Was ist jetzt mit maiLab?",
+      "censor_count": 0,
+      "token_count": 1410,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "GtBnj3Z3eO4",
+      "title": "So werden wir von der Politik ver*rscht",
+      "censor_count": 0,
+      "token_count": 3985,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "_AV62rAyDc0",
+      "title": "STATEMENT.",
+      "censor_count": 0,
+      "token_count": 1404,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "FiBpbWSkXvE",
+      "title": "Das Ende von maiLab",
+      "censor_count": 0,
+      "token_count": 3127,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "IK5BZdnqMDU",
+      "title": "Das Ende der Homöopathie | MAITHINK X",
+      "censor_count": 0,
+      "token_count": 3879,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "Mt50U4_ueR0",
+      "title": "Affenpocken",
+      "censor_count": 0,
+      "token_count": 1965,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "-NMs56pQ9EE",
+      "title": "Putin und die Grüne Energie",
+      "censor_count": 0,
+      "token_count": 2243,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "-9OvNz7NESQ",
+      "title": "Corona-Endlosschleife | Kommen wir da jemals wieder raus?",
+      "censor_count": 0,
+      "token_count": 1666,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "KEggd1S9_9Y",
+      "title": "Impfpflicht ist OK",
+      "censor_count": 0,
+      "token_count": 2247,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "ptJ-42ME3f8",
+      "title": "Freiheit vs. Wissenschaft | MAITHINK X",
+      "censor_count": 0,
+      "token_count": 3650,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "KD2UxUpy88Q",
+      "title": "Es ist unfassbar.",
+      "censor_count": 0,
+      "token_count": 756,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "BPIWGGtCaiY",
+      "title": "So schlimm wird die Pflegekrise",
+      "censor_count": 0,
+      "token_count": 2318,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "8nFvUmrkjoM",
+      "title": "Die Pille wissenschaftlich geprüft",
+      "censor_count": 0,
+      "token_count": 3316,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "VaiwC1icfEY",
+      "title": "Wir müssen reden.",
+      "censor_count": 0,
+      "token_count": 2945,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "oBLQmE-nG60",
+      "title": "Wie sicher ist AstraZeneca wirklich?",
+      "censor_count": 0,
+      "token_count": 1467,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "X6hSrYsB_k0",
+      "title": "Glutamat ist unbedenklich",
+      "censor_count": 0,
+      "token_count": 2114,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "bE315x4Vbf0",
+      "title": "Versöhnung",
+      "censor_count": 0,
+      "token_count": 1990,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "a_NpJU12_LA",
+      "title": "7 kritische Fragen zur Impfung",
+      "censor_count": 0,
+      "token_count": 3249,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "pGJEVXvOcRY",
+      "title": "So endet Corona",
+      "censor_count": 0,
+      "token_count": 2990,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "ud9d5cMDP_0",
+      "title": "Vitamin D wissenschaftlich geprüft",
+      "censor_count": 0,
+      "token_count": 2407,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "EEiZawMAG1g",
+      "title": "Phrenologie stimmt nie",
+      "censor_count": 0,
+      "token_count": 2463,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "AxVov3SUA9I",
+      "title": "Meinungsfreiheit am Beispiel Wendler",
+      "censor_count": 0,
+      "token_count": 1746,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "Nn2rJrKwENI",
+      "title": "Corona hat meine Meinung geändert",
+      "censor_count": 0,
+      "token_count": 2441,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "NVGeu1N_D_Y",
+      "title": "Heilpraktiker wissenschaftlich geprüft",
+      "censor_count": 0,
+      "token_count": 3104,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "FR0Pj_sg0LM",
+      "title": "Krasser Weg zur Million",
+      "censor_count": 0,
+      "token_count": 3578,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "video_id": "czzrPQIg54Q",
+      "title": "Corona im Herbst | Ändern Schnelltests alles?",
+      "censor_count": 0,
+      "token_count": 3216,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "5oS0qte_Keo",
+      "title": "Ich habe meine eigene GAMESHOW gemacht! (mit Dave)",
+      "censor_count": 30,
+      "token_count": 41120,
+      "density_per_1k_tokens": 0.7296
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "zYNkx9lSjTI",
+      "title": "Wir bewerten die LUSTIGSTEN Twitch Clips 2025!",
+      "censor_count": 25,
+      "token_count": 16502,
+      "density_per_1k_tokens": 1.515
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "Wm0xWgmU0s8",
+      "title": "Ich habe eine 1000€ Mysterybox von nem Ami Streamer bekommen...",
+      "censor_count": 25,
+      "token_count": 3512,
+      "density_per_1k_tokens": 7.1185
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "7pA5_2lyKkU",
+      "title": "Im Stau zu kochen war ein Fehler... (so stressig omg)",
+      "censor_count": 24,
+      "token_count": 6920,
+      "density_per_1k_tokens": 3.4682
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "4YDMdE4WdQ8",
+      "title": "Ich musste JEDE Dumme TikTok Werbung kaufen...",
+      "censor_count": 24,
+      "token_count": 3433,
+      "density_per_1k_tokens": 6.991
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "_PtCU6wyuZc",
+      "title": "Wir bewerten die LUSTIGSTEN Twitch Clips 2024!",
+      "censor_count": 24,
+      "token_count": 12685,
+      "density_per_1k_tokens": 1.892
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "I8nZpBEjzWY",
+      "title": "Welcher Streamer schafft es durch die Schule?",
+      "censor_count": 22,
+      "token_count": 13956,
+      "density_per_1k_tokens": 1.5764
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "HxYqad6iTVE",
+      "title": "Smash or Pass, aber es wird immer verrückter...",
+      "censor_count": 21,
+      "token_count": 5037,
+      "density_per_1k_tokens": 4.1691
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "tX3UFfCdejw",
+      "title": "Ich roaste eure GRAUENHAFTEN Zimmer...",
+      "censor_count": 20,
+      "token_count": 7408,
+      "density_per_1k_tokens": 2.6998
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "SyluPooIbg0",
+      "title": "Was sind meine BESTEN CLIPS des Jahres?",
+      "censor_count": 19,
+      "token_count": 6066,
+      "density_per_1k_tokens": 3.1322
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "mNs1jSmBon4",
+      "title": "Wenn ich LACHE muss ich DREHEN... (Mods Edition)",
+      "censor_count": 16,
+      "token_count": 2838,
+      "density_per_1k_tokens": 5.6378
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "V7wtSC0n8vA",
+      "title": "Das Ende der Edeltour...",
+      "censor_count": 16,
+      "token_count": 4810,
+      "density_per_1k_tokens": 3.3264
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "Uys54AVqAXw",
+      "title": "Wir haben den verrücktesten Bauern getroffen...",
+      "censor_count": 16,
+      "token_count": 6445,
+      "density_per_1k_tokens": 2.4825
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "SrmQolYeec8",
+      "title": "Wenn ich LACHE, kaufe ich euch ALLES! (10000€ XXL EDITION)",
+      "censor_count": 14,
+      "token_count": 3899,
+      "density_per_1k_tokens": 3.5907
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "hM-gvqPWaJQ",
+      "title": "Ich RANKE die besten Papaplatte Clips des Jahres!",
+      "censor_count": 14,
+      "token_count": 6692,
+      "density_per_1k_tokens": 2.0921
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "y0qtaFaXgCo",
+      "title": "Ich ROASTE eure schäbigen Setups...",
+      "censor_count": 13,
+      "token_count": 5749,
+      "density_per_1k_tokens": 2.2613
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "_apZdiJoFzc",
+      "title": "Ich kaufe meinen Mods ALLES...",
+      "censor_count": 12,
+      "token_count": 6056,
+      "density_per_1k_tokens": 1.9815
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "cH1liEjswis",
+      "title": "Ich reagiere auf die DOMOS 2025!",
+      "censor_count": 12,
+      "token_count": 6444,
+      "density_per_1k_tokens": 1.8622
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "jZyyUFDPFO0",
+      "title": "Ich teste die DÜMMSTEN Höhle der Löwen Produkte...",
+      "censor_count": 11,
+      "token_count": 5490,
+      "density_per_1k_tokens": 2.0036
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "75wWXN6IalM",
+      "title": "Welcher Streamer kommt durch die Schule? (mit den dümmsten Teilnehmer)",
+      "censor_count": 11,
+      "token_count": 12514,
+      "density_per_1k_tokens": 0.879
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "vJm6pLCzc8M",
+      "title": "Ich kaufe meinen Mods ALLES was sie wollen!",
+      "censor_count": 11,
+      "token_count": 4819,
+      "density_per_1k_tokens": 2.2826
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "FNHI9To5RKw",
+      "title": "Wir versuchen eure Liebesprobleme zu \"lösen\"...",
+      "censor_count": 10,
+      "token_count": 7067,
+      "density_per_1k_tokens": 1.415
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "YVwEN759r0s",
+      "title": "Wir hätten nicht NACHTS rodeln sollen...",
+      "censor_count": 9,
+      "token_count": 1329,
+      "density_per_1k_tokens": 6.772
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "3sDXNAeQ960",
+      "title": "LACHEN = DREHEN MIT REWI... (Rewi ist am ende)",
+      "censor_count": 8,
+      "token_count": 3282,
+      "density_per_1k_tokens": 2.4375
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "M4s7HlZIcE0",
+      "title": "Wir haben Sack geblasen...",
+      "censor_count": 8,
+      "token_count": 7186,
+      "density_per_1k_tokens": 1.1133
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "_LFY5hYqxg8",
+      "title": "Ich ROASTE eure \"Berufe\" (Einer verliert seinen Job)",
+      "censor_count": 8,
+      "token_count": 5195,
+      "density_per_1k_tokens": 1.5399
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "VUlcLchxXs4",
+      "title": "Der dümmste Winterurlaub mit meinen Freunden startet...",
+      "censor_count": 7,
+      "token_count": 4381,
+      "density_per_1k_tokens": 1.5978
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "l8Ob16XG1kQ",
+      "title": "Meine Freunde versuchen meinen Style zu retten... (hat nicht geklappt)",
+      "censor_count": 7,
+      "token_count": 4531,
+      "density_per_1k_tokens": 1.5449
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "n2Lo4CwVzOo",
+      "title": "Ich checke eure VERRÜCKTEN Autos ab...",
+      "censor_count": 6,
+      "token_count": 4596,
+      "density_per_1k_tokens": 1.3055
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "1y-DpgEYRh0",
+      "title": "1 Euro = 1 Sekunde Video",
+      "censor_count": 6,
+      "token_count": 2077,
+      "density_per_1k_tokens": 2.8888
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "uH3rq5Z9S5A",
+      "title": "Dieser Kapitän hat unseren Tag gerettet!",
+      "censor_count": 6,
+      "token_count": 4643,
+      "density_per_1k_tokens": 1.2923
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "52O8fGLttCY",
+      "title": "Unsere chaotische Wohnmobiltour startet wieder!",
+      "censor_count": 6,
+      "token_count": 6551,
+      "density_per_1k_tokens": 0.9159
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "m2leJIRHXnk",
+      "title": "Wir testen TikTok Küchen Gadgets, die funktionieren?",
+      "censor_count": 5,
+      "token_count": 7044,
+      "density_per_1k_tokens": 0.7098
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "FLPiKYE_eow",
+      "title": "Wir finden keinen Schlafplatz mehr... (oh manno)",
+      "censor_count": 5,
+      "token_count": 7428,
+      "density_per_1k_tokens": 0.6731
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "33dnB0tIdtM",
+      "title": "Wenn ich LACHE muss ich DREHEN... (Törken Edition)",
+      "censor_count": 5,
+      "token_count": 2144,
+      "density_per_1k_tokens": 2.3321
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "Xa7WeBX6UKc",
+      "title": "Wir haben meine LIEBLINGSSHOW geklaut!",
+      "censor_count": 5,
+      "token_count": 13858,
+      "density_per_1k_tokens": 0.3608
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "1nDop6aU8Q8",
+      "title": "Schaffen wir es unsere Zuschauer zu erkennen?",
+      "censor_count": 5,
+      "token_count": 5595,
+      "density_per_1k_tokens": 0.8937
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "GFMoDDqDGx0",
+      "title": "Wie kann man nur so blöd sein...",
+      "censor_count": 4,
+      "token_count": 3453,
+      "density_per_1k_tokens": 1.1584
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "4KUTkLGJqrM",
+      "title": "Ihr bekommt 100€, wenn ihr mich zum LACHEN bringt!",
+      "censor_count": 4,
+      "token_count": 3487,
+      "density_per_1k_tokens": 1.1471
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "a142B_KlKso",
+      "title": "I hate this man...",
+      "censor_count": 3,
+      "token_count": 2047,
+      "density_per_1k_tokens": 1.4656
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "OGEuoBfvQck",
+      "title": "Wie ich 55.000€ in 2 Stunden gesammelt habe! (Sellout Stream)",
+      "censor_count": 3,
+      "token_count": 2070,
+      "density_per_1k_tokens": 1.4493
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "izSWxhLLzIQ",
+      "title": "Ich hab seine TikToks 1 Jahr ignoriert, jetzt schau ich sie alle...",
+      "censor_count": 3,
+      "token_count": 2563,
+      "density_per_1k_tokens": 1.1705
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "NbYcp3XIHXI",
+      "title": "Wenn ich LACHE muss ich DREHEN...",
+      "censor_count": 3,
+      "token_count": 2341,
+      "density_per_1k_tokens": 1.2815
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "uXdDkZZTkdc",
+      "title": "Ich teste AMERIKANISCHE Höhle der Löwen Produkte...",
+      "censor_count": 2,
+      "token_count": 4379,
+      "density_per_1k_tokens": 0.4567
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "Do1lycZ6rgA",
+      "title": "Ich kaufe NEUE Spiele für 1€, 10€, 100€, 500€ und 6000€... (Fiverr)",
+      "censor_count": 2,
+      "token_count": 3442,
+      "density_per_1k_tokens": 0.5811
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "NHHlofdP30U",
+      "title": "Mein Chat versucht mein Zimmer zu retten... (Es ist schon Januar)",
+      "censor_count": 2,
+      "token_count": 2436,
+      "density_per_1k_tokens": 0.821
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "dW_DdjCPGc4",
+      "title": "Mein Chat darf ALLES kaufen um mein Zimmer zu retten...",
+      "censor_count": 2,
+      "token_count": 3315,
+      "density_per_1k_tokens": 0.6033
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "E4XGYv9G5mM",
+      "title": "Wir besuchen das deutsche Olympia-Haus!",
+      "censor_count": 1,
+      "token_count": 2789,
+      "density_per_1k_tokens": 0.3586
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "9AkEx57vM-8",
+      "title": "Wir sind auf die größte Tourifalle reingefallen...",
+      "censor_count": 0,
+      "token_count": 6715,
+      "density_per_1k_tokens": 0.0
+    },
+    {
+      "creator": "papaplatte",
+      "video_id": "liKuKfxPb9M",
+      "title": "Papaplatte reagiert auf die Domos 2024!",
+      "censor_count": 0,
+      "token_count": 7515,
+      "density_per_1k_tokens": 0.0
+    }
+  ],
+  "per_creator": {
+    "papaplatte": {
+      "total_censors": 515,
+      "total_tokens": 315854,
+      "density_per_1k_tokens": 1.6305,
+      "videos_with_any_censor": 48,
+      "max_single_video_count": 30
+    },
+    "apored": {
+      "total_censors": 4,
+      "total_tokens": 94884,
+      "density_per_1k_tokens": 0.0422,
+      "videos_with_any_censor": 2,
+      "max_single_video_count": 2
+    },
+    "maithinkx": {
+      "total_censors": 0,
+      "total_tokens": 149164,
+      "density_per_1k_tokens": 0.0,
+      "videos_with_any_censor": 0,
+      "max_single_video_count": 0
+    }
+  },
+  "per_creator_category_counts": {
+    "papaplatte": {
+      "profanity": 124,
+      "insult": 5,
+      "slur": 0,
+      "unknown": 29
+    },
+    "apored": {
+      "profanity": 3,
+      "insult": 1,
+      "slur": 0,
+      "unknown": 0
+    },
+    "maithinkx": {
+      "profanity": 0,
+      "insult": 0,
+      "slur": 0,
+      "unknown": 0
+    }
+  },
+  "example_censors": {
+    "papaplatte": [
+      {
+        "sentence": "…et halt vorne so runter ne ja ja das ist voll schwer ich weiß nicht genau wie man das genau macht aber hier das so dass der hier oben so drauf tricky [__] vielleicht muss man wieso die Jungs in so ein Drive vi habe ich auch überlegt habe ich auch überlegt ich te mal so also dave ist bei 840 in die 80 rein Scheiße der ein neues schwettefunden oh shit das die ne met das die Meter okay e ganz kurz no",
+        "likely_word": "?",
+        "category": "unknown"
+      },
+      {
+        "sentence": "[__] Minute, ich bin was ist er denn so sauer als die 31?",
+        "likely_word": "?",
+        "category": "unknown"
+      },
+      {
+        "sentence": "[__] euch, [gelächter] Diger.",
+        "likely_word": "Fick",
+        "category": "profanity"
+      },
+      {
+        "sentence": "[__] [gelächter] ich fick e Penner, ihr gierigen Schwzees [gelächter] Mal jedes Mal will jeder in der ersten Runde Top 5 sein.",
+        "likely_word": "Fick",
+        "category": "profanity"
+      },
+      {
+        "sentence": "[__] ich euch.",
+        "likely_word": "Fick",
+        "category": "profanity"
+      },
+      {
+        "sentence": "So ein Clip, den ich von Eli immer wieder bekomme gerade auf TikTok ist dieser eine Clip, wo er war das ja da sagt irgendwie so irgendwie so meine Mutter ist eine [__] wenn ich weiterspiel, wenn ihr jetzt nicht sehen willt oder irgendwie so irgendwie so irgendwie sowas sagt er da, Bro.",
+        "likely_word": "Hure",
+        "category": "insult"
+      },
+      {
+        "sentence": "Du willst mich [__] oder?",
+        "likely_word": "verarschen",
+        "category": "profanity"
+      },
+      {
+        "sentence": "What the [__] Zer [gelächter] die Oh, spielt Isa im Verein.",
+        "likely_word": "fuck",
+        "category": "profanity"
+      },
+      {
+        "sentence": "Ja, [__] Ja, schige Big McDonald's [__] Nenn mich nenn mich nenn mich Mischstück.",
+        "likely_word": "fuck",
+        "category": "profanity"
+      },
+      {
+        "sentence": "What the [__] Aber Bro, das ist crazy, dann so das auch so zu so einem Kind zu sagen.",
+        "likely_word": "fuck",
+        "category": "profanity"
+      }
+    ],
+    "apored": [
+      {
+        "sentence": "Yeah, ihr sagt jetzt wird der allerechte gesperrt, aber [__] you, ich habe mir die Rechte geklärt.",
+        "likely_word": "fuck",
+        "category": "profanity"
+      },
+      {
+        "sentence": "On top Nummer eins im Business kleine [__] so wie die Rizls.",
+        "likely_word": "Bitches",
+        "category": "insult"
+      },
+      {
+        "sentence": "…tellig verdient lass es 30 40 was auch immer sein aber das erste Mal habe ich dann sechsstellig verdient also richtig knallhart und ich Dach what the [__] Alter also mit YouTube kannst du jeden Fall gutes Geld verdienen auch mit Amazon aber mit Klamotten habe ich gemerkt wow das ist der wahre Hase also was habe ich natürlich gemacht ganze Geld wieder genommen wieder neue Produktion blablabla wir h",
+        "likely_word": "fuck",
+        "category": "profanity"
+      },
+      {
+        "sentence": "…t die ganze Zeit und dann kommt noch mal Gaming dazu komplett neues Feld komplett neue Nische und auf einmal erste Monat fast 300k ich denke what the [__] im zweiten Monat auch das war alles noch März April ich denke diger was geht hier ab ihr müsst euch vorstellen das Elektronikgeschäft Nano das lief so gut ich musste dann von einem 600 mad Lager switchen auf einem fast 2000 madr Lager weil halt",
+        "likely_word": "fuck",
+        "category": "profanity"
+      }
+    ],
+    "maithinkx": []
+  },
+  "papaplatte_vs_others_ratio": "38.64x higher than apored, infinite higher than maithinkx",
+  "papaplatte_50pct_claim": {
+    "papaplatte_quote": "Beleidigungen fehlen, droppt meine Wörter um 50%",
+    "interpretation": "Papaplatte claimed ~50% of his profanity words are dropped by auto-captions. We can't measure the absolute drop rate without a gold transcript, but we can measure whether his censor-marker density is disproportionately high vs peers — which would directionally support his claim that YouTube censors him more aggressively.",
+    "verdict": "supported"
+  },
+  "openrouter_model": "anthropic/claude-haiku-4.5",
+  "cost_estimate_usd": 0.0276,
+  "generated_at": "2026-04-22T12:35:49.594999+00:00"
+}

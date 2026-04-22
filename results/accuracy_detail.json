@@ -1,0 +1,224 @@
+{
+  "reference_strategy": {
+    "deterministic_metrics": "script is reference by construction (pure math on fixed text)",
+    "denglisch": "/usr/share/dict/words (234,367 english words, minus German overlaps)"
+  },
+  "rows": [
+    {
+      "creator": "apored",
+      "metric": "vocabulary_ttr",
+      "gold": 0.119,
+      "script": 0.119,
+      "ai": 0.12,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.5
+    },
+    {
+      "creator": "apored",
+      "metric": "wealth_flex",
+      "gold": 3.128,
+      "script": 3.128,
+      "ai": 3.136,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.26
+    },
+    {
+      "creator": "apored",
+      "metric": "drama_conflict",
+      "gold": 0.244,
+      "script": 0.244,
+      "ai": 0.244,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.27
+    },
+    {
+      "creator": "apored",
+      "metric": "hype_adjectives",
+      "gold": 1.463,
+      "script": 1.463,
+      "ai": 1.466,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.27
+    },
+    {
+      "creator": "apored",
+      "metric": "egocentrism",
+      "gold": 53.281,
+      "script": 53.281,
+      "ai": 53.42,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.26
+    },
+    {
+      "creator": "apored",
+      "metric": "avg_word_len",
+      "gold": 4.659,
+      "script": 4.659,
+      "ai": 4.671,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.26
+    },
+    {
+      "creator": "apored",
+      "metric": "total_tokens",
+      "gold": 49230.0,
+      "script": 49230.0,
+      "ai": 49101,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.26
+    },
+    {
+      "creator": "apored",
+      "metric": "denglisch",
+      "gold": 98.375,
+      "script": 27.382,
+      "ai": 46.924,
+      "script_err_pct": 72.17,
+      "ai_err_pct": 52.3
+    },
+    {
+      "creator": "maithinkx",
+      "metric": "vocabulary_ttr",
+      "gold": 0.135,
+      "script": 0.135,
+      "ai": 0.135,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "metric": "wealth_flex",
+      "gold": 1.366,
+      "script": 1.366,
+      "ai": 1.366,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "metric": "drama_conflict",
+      "gold": 0.118,
+      "script": 0.118,
+      "ai": 0.118,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "metric": "hype_adjectives",
+      "gold": 0.318,
+      "script": 0.318,
+      "ai": 0.318,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "metric": "egocentrism",
+      "gold": 12.368,
+      "script": 12.368,
+      "ai": 12.368,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "metric": "avg_word_len",
+      "gold": 5.438,
+      "script": 5.438,
+      "ai": 5.438,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "metric": "total_tokens",
+      "gold": 84898.0,
+      "script": 84898.0,
+      "ai": 84898.0,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.0
+    },
+    {
+      "creator": "maithinkx",
+      "metric": "denglisch",
+      "gold": 66.244,
+      "script": 23.699,
+      "ai": 23.699,
+      "script_err_pct": 64.22,
+      "ai_err_pct": 64.22
+    },
+    {
+      "creator": "papaplatte",
+      "metric": "vocabulary_ttr",
+      "gold": 0.086,
+      "script": 0.086,
+      "ai": 0.086,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.83
+    },
+    {
+      "creator": "papaplatte",
+      "metric": "wealth_flex",
+      "gold": 0.627,
+      "script": 0.627,
+      "ai": 0.63,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.34
+    },
+    {
+      "creator": "papaplatte",
+      "metric": "drama_conflict",
+      "gold": 0.054,
+      "script": 0.054,
+      "ai": 0.054,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.32
+    },
+    {
+      "creator": "papaplatte",
+      "metric": "hype_adjectives",
+      "gold": 3.246,
+      "script": 3.246,
+      "ai": 3.257,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.34
+    },
+    {
+      "creator": "papaplatte",
+      "metric": "egocentrism",
+      "gold": 48.719,
+      "script": 48.719,
+      "ai": 48.886,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.34
+    },
+    {
+      "creator": "papaplatte",
+      "metric": "avg_word_len",
+      "gold": 4.369,
+      "script": 4.369,
+      "ai": 4.383,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.34
+    },
+    {
+      "creator": "papaplatte",
+      "metric": "total_tokens",
+      "gold": 129086.0,
+      "script": 129086.0,
+      "ai": 128646,
+      "script_err_pct": 0.0,
+      "ai_err_pct": 0.34
+    },
+    {
+      "creator": "papaplatte",
+      "metric": "denglisch",
+      "gold": 119.525,
+      "script": 48.239,
+      "ai": 111.609,
+      "script_err_pct": 59.64,
+      "ai_err_pct": 6.62
+    }
+  ]
+}

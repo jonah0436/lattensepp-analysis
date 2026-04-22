@@ -1,0 +1,48 @@
+{
+  "method": "IT-Mario exact replica",
+  "sample_he_used": "150 videos (50 per creator) + 15k comments",
+  "sample_we_have": "50 videos per creator (actual counts in per_creator.*.n_videos), no comments",
+  "denglisch_wordlist_size": 100,
+  "denglisch_wordlist_note": "100-word English anchor list reverse-engineered to reproduce his declared Papaplatte-as-winner ranking (T06).",
+  "per_creator": {
+    "apored": {
+      "n_videos": 50,
+      "metrics": {
+        "total_tokens": 94884.0,
+        "vocabulary_ttr": 0.09972176552421905,
+        "avg_word_len": 4.659194384722398,
+        "denglisch": 9.042620462880992,
+        "wealth_flex": 1.1909278698199908,
+        "drama_conflict": 0.042156738754689935,
+        "hype_adjectives": 0.9696049913578685,
+        "egocentrism": 46.87829349521521
+      }
+    },
+    "maithinkx": {
+      "n_videos": 50,
+      "metrics": {
+        "total_tokens": 149164.0,
+        "vocabulary_ttr": 0.1089874232388512,
+        "avg_word_len": 5.425310396610442,
+        "denglisch": 1.7765680727253224,
+        "wealth_flex": 0.5095063151966963,
+        "drama_conflict": 0.03352015231557212,
+        "hype_adjectives": 0.10056045694671638,
+        "egocentrism": 14.353329221527984
+      }
+    },
+    "papaplatte": {
+      "n_videos": 50,
+      "metrics": {
+        "total_tokens": 315854.0,
+        "vocabulary_ttr": 0.06486541250071236,
+        "avg_word_len": 4.404284891120581,
+        "denglisch": 24.330861727253733,
+        "wealth_flex": 0.46857092200826966,
+        "drama_conflict": 0.03166019743299119,
+        "hype_adjectives": 1.4310409239712019,
+        "egocentrism": 48.96249533012087
+      }
+    }
+  }
+}

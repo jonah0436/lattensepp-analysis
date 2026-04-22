@@ -1,0 +1,35 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Env / secrets
+.env
+.env.*
+
+# Large data — regenerable via bench/fetch_*.py (see data/README.md)
+data/whisper_samples/
+data/transcripts/
+data/transcripts_filtered/
+data/transcripts_n50/
+data/transcripts_n50_clean/
+data/transcripts_holdout_n10/
+data/comments/
+data/original__*.txt
+data/original__*.vtt
+data/Ich*.txt
+data/Ich*.vtt
+
+# Logs
+/tmp/t04_logs/
+*.log
+
+# Session state (not a public artifact)
+HANDOFF.md

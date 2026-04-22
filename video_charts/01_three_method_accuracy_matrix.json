@@ -1,0 +1,112 @@
+{
+  "title": "3 Methoden, 7 Kreator-Metriken — trifft der Sieger?",
+  "subtitle": "Score vs. IT-Mario's declared winners",
+  "chart_type": "heatmap",
+  "x_axis": {
+    "label": "Metric",
+    "values": [
+      "TTR",
+      "Wealth",
+      "Drama",
+      "Hype",
+      "Ego",
+      "Denglisch",
+      "Word len"
+    ]
+  },
+  "y_axis": {
+    "label": "Method",
+    "values": [
+      "IT-Mario replica",
+      "AI agents",
+      "Hybrid"
+    ]
+  },
+  "series": [
+    {
+      "name": "winner match (1=hit, 0.5=tie-match, 0=miss)",
+      "data": [
+        [
+          1.0,
+          1.0,
+          1.0,
+          0.5,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          0.0,
+          0.5,
+          0.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          0.5,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "color_hint": "green=hit, yellow=tie, red=miss"
+    }
+  ],
+  "row_totals": [
+    "6/7",
+    "4/7",
+    "6/7"
+  ],
+  "cell_winners": [
+    [
+      "maithinkx",
+      "apored",
+      "apored",
+      "papaplatte (tie-match)",
+      "papaplatte",
+      "papaplatte",
+      "maithinkx"
+    ],
+    [
+      "maithinkx",
+      "apored",
+      "tie",
+      "tie (tie-match)",
+      "apored",
+      "papaplatte",
+      "maithinkx"
+    ],
+    [
+      "maithinkx",
+      "apored",
+      "apored",
+      "papaplatte (tie-match)",
+      "papaplatte",
+      "papaplatte",
+      "maithinkx"
+    ]
+  ],
+  "annotations": [
+    {
+      "x": 3,
+      "y": 1,
+      "text": "IT-Mario declared hype a tie (papaplatte & apored). AI picks papaplatte → tie-match.",
+      "style": "callout"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "text": "AI's only real miss: egocentrism (picks apored, declared papaplatte).",
+      "style": "callout"
+    }
+  ],
+  "footnote": "Ground truth: IT-Mario's declared winners in the YouTube video. Hype coded as tie.",
+  "source_path": "results/methods_n50_clean.json",
+  "generator_script": "bench/export_video_charts.py",
+  "generated_at": "2026-04-22T17:25:28Z"
+}

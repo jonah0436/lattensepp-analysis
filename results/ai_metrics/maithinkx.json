@@ -1,0 +1,15 @@
+{
+  "creator": "maithinkx",
+  "n_videos": 25,
+  "source": "filtered",
+  "metrics": {
+    "vocabulary_ttr": 0.1347263775353954,
+    "wealth_flex": 1.3663454969492803,
+    "drama_conflict": 0.11778840490942072,
+    "hype_adjectives": 0.318028693255436,
+    "egocentrism": 12.367782515489175,
+    "denglisch": 23.69902706777545,
+    "avg_word_len": 5.437654597281443,
+    "total_tokens": 84898.0
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "script_wall_s_total": 2.30,
+  "ai_total_wall_s": 353.4,
+  "ai_cost_usd_est": 0.28,
+  "note": "ai wall = max of 3 parallel agents (353s). cost = rough Sonnet estimate on ~190k combined tokens."
+}

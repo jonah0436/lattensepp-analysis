@@ -1,0 +1,158 @@
+{
+  "conditions": [
+    "script_raw_n1",
+    "script_raw_nall",
+    "script_filtered_n1",
+    "script_filtered_nall"
+  ],
+  "script_wall_s_total": 0.1744,
+  "agreement_fair_ai_vs_script": {
+    "rows": [
+      {
+        "metric": "vocabulary_ttr",
+        "label": "Wortschatz (Type-Token Ratio)",
+        "ai_winner": "maithinkx",
+        "script_winner": "maithinkx",
+        "ground_truth": "maithinkx",
+        "ab_agree": true,
+        "ai_matches_gt": true,
+        "script_matches_gt": true
+      },
+      {
+        "metric": "wealth_flex",
+        "label": "Reichtum / Flex",
+        "ai_winner": "apored",
+        "script_winner": "apored",
+        "ground_truth": "apored",
+        "ab_agree": true,
+        "ai_matches_gt": true,
+        "script_matches_gt": true
+      },
+      {
+        "metric": "drama_conflict",
+        "label": "Konflikt / Drama",
+        "ai_winner": "apored",
+        "script_winner": "apored",
+        "ground_truth": "apored",
+        "ab_agree": true,
+        "ai_matches_gt": true,
+        "script_matches_gt": true
+      },
+      {
+        "metric": "hype_adjectives",
+        "label": "Hype-Adjektive",
+        "ai_winner": "papaplatte",
+        "script_winner": "papaplatte",
+        "ground_truth": "tie",
+        "ab_agree": true,
+        "ai_matches_gt": false,
+        "script_matches_gt": false
+      },
+      {
+        "metric": "egocentrism",
+        "label": "Ich-Bezug",
+        "ai_winner": "apored",
+        "script_winner": "apored",
+        "ground_truth": "papaplatte",
+        "ab_agree": true,
+        "ai_matches_gt": false,
+        "script_matches_gt": false
+      },
+      {
+        "metric": "denglisch",
+        "label": "Englisch-Anteil (Denglisch)",
+        "ai_winner": "papaplatte",
+        "script_winner": "papaplatte",
+        "ground_truth": "papaplatte",
+        "ab_agree": true,
+        "ai_matches_gt": true,
+        "script_matches_gt": true
+      },
+      {
+        "metric": "avg_word_len",
+        "label": "Durchschnittliche Wortlänge",
+        "ai_winner": "maithinkx",
+        "script_winner": "maithinkx",
+        "ground_truth": "maithinkx",
+        "ab_agree": true,
+        "ai_matches_gt": true,
+        "script_matches_gt": true
+      }
+    ],
+    "ab_agreement_pct": 100.0,
+    "ai_vs_gt_pct": 71.4,
+    "script_vs_gt_pct": 71.4
+  },
+  "filter_impact_raw_to_filtered": {
+    "rows": [
+      {
+        "metric": "vocabulary_ttr",
+        "mean_rel_change_pct": 0.17
+      },
+      {
+        "metric": "wealth_flex",
+        "mean_rel_change_pct": 0.27
+      },
+      {
+        "metric": "drama_conflict",
+        "mean_rel_change_pct": 0.19
+      },
+      {
+        "metric": "hype_adjectives",
+        "mean_rel_change_pct": 0.19
+      },
+      {
+        "metric": "egocentrism",
+        "mean_rel_change_pct": 0.18
+      },
+      {
+        "metric": "denglisch",
+        "mean_rel_change_pct": 0.18
+      },
+      {
+        "metric": "avg_word_len",
+        "mean_rel_change_pct": 0.09
+      },
+      {
+        "metric": "total_tokens",
+        "mean_rel_change_pct": 0.19
+      }
+    ]
+  },
+  "sample_impact_n1_to_nall": {
+    "rows": [
+      {
+        "metric": "vocabulary_ttr",
+        "mean_rel_change_pct": 57.59
+      },
+      {
+        "metric": "wealth_flex",
+        "mean_rel_change_pct": 100.0
+      },
+      {
+        "metric": "drama_conflict",
+        "mean_rel_change_pct": 80.98
+      },
+      {
+        "metric": "hype_adjectives",
+        "mean_rel_change_pct": 69.07
+      },
+      {
+        "metric": "egocentrism",
+        "mean_rel_change_pct": 33.15
+      },
+      {
+        "metric": "denglisch",
+        "mean_rel_change_pct": 12.86
+      },
+      {
+        "metric": "avg_word_len",
+        "mean_rel_change_pct": 1.11
+      },
+      {
+        "metric": "total_tokens",
+        "mean_rel_change_pct": 96.15
+      }
+    ]
+  }
+}

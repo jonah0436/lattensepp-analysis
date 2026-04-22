@@ -1,0 +1,148 @@
+{
+  "corpus_size_per_creator": {
+    "apored": 5,
+    "maithinkx": 10,
+    "papaplatte": 10
+  },
+  "target_size_per_creator": 10,
+  "notes": {
+    "apored": "Channel has 58 total uploads on /videos tab; 50 were used in N=50 corpus. Of remaining 8, only 3 had auto-captions (music videos). Added 2 shorts to reach 5 held-out videos. Channel is truly capped — no further net-new content exists."
+  },
+  "fetched_video_ids": {
+    "apored": [
+      "mIEpQYk1TN8",
+      "0PHRWd0evTY",
+      "Q1PaBrxmtV4",
+      "OvabwhhSv-M",
+      "ao6OqnD0Rmk"
+    ],
+    "maithinkx": [
+      "_R0ywINFaOo",
+      "M0VpTjZL57U",
+      "5C_eKavoL8M",
+      "DHyRaUeHcGY",
+      "oDrG6NBqcnk",
+      "De5FGogMWzQ",
+      "B7Rul6p6SZM",
+      "TkkHKU_lLqU",
+      "u439pm8uYSk",
+      "3z0gnXgK8Do"
+    ],
+    "papaplatte": [
+      "1vqeMJpcJ8A",
+      "cJ-ARShr25Q",
+      "aMu6XxFBfnA",
+      "aA2LU25uJcw",
+      "wRULwm4Oj1E",
+      "TS_hikxy9Xo",
+      "fPuic5EQVwE",
+      "Pva7dZ2roeg",
+      "U2UWAc46qQA",
+      "7S8YlBseHfA"
+    ]
+  },
+  "metrics_holdout": {
+    "it_mario": {
+      "apored": {
+        "total_tokens": 910.0,
+        "vocabulary_ttr": 0.5,
+        "avg_word_len": 4.714285714285714,
+        "denglisch": 7.6923076923076925,
+        "wealth_flex": 1.098901098901099,
+        "drama_conflict": 0.0,
+        "hype_adjectives": 0.0,
+        "egocentrism": 38.46153846153847
+      },
+      "maithinkx": {
+        "total_tokens": 31787.0,
+        "vocabulary_ttr": 0.17604681158964355,
+        "avg_word_len": 5.488344291691572,
+        "denglisch": 1.8561046968886652,
+        "wealth_flex": 0.1258376065687231,
+        "drama_conflict": 0.03145940164218077,
+        "hype_adjectives": 0.03145940164218077,
+        "egocentrism": 12.520841853587944
+      },
+      "papaplatte": {
+        "total_tokens": 45719.0,
+        "vocabulary_ttr": 0.12465277018307487,
+        "avg_word_len": 4.389094249655504,
+        "denglisch": 18.30748704039896,
+        "wealth_flex": 0.41558214309149366,
+        "drama_conflict": 0.04374548874647302,
+        "hype_adjectives": 2.3841291366827795,
+        "egocentrism": 40.880159233579036
+      }
+    },
+    "hybrid": {
+      "apored": {
+        "total_tokens": 910.0,
+        "vocabulary_ttr": 0.5,
+        "avg_word_len": 4.714285714285714,
+        "wealth_flex": 1.098901098901099,
+        "drama_conflict": 0.0,
+        "hype_adjectives": 0.0,
+        "egocentrism": 39.56043956043956,
+        "denglisch": 250.54945054945054
+      },
+      "maithinkx": {
+        "total_tokens": 31787.0,
+        "vocabulary_ttr": 0.17604681158964355,
+        "avg_word_len": 5.488344291691572,
+        "wealth_flex": 0.6606474344857961,
+        "drama_conflict": 0.5662692295592537,
+        "hype_adjectives": 0.4718910246327115,
+        "egocentrism": 12.961273476578475,
+        "denglisch": 190.54959574668888
+      },
+      "papaplatte": {
+        "total_tokens": 45719.0,
+        "vocabulary_ttr": 0.12465277018307487,
+        "avg_word_len": 4.389094249655504,
+        "wealth_flex": 0.5686913537041492,
+        "drama_conflict": 0.04374548874647302,
+        "hype_adjectives": 4.090203197795227,
+        "egocentrism": 41.339486865417,
+        "denglisch": 282.24589339224394
+      }
+    }
+  },
+  "winners_n50": {
+    "vocabulary_ttr": "maithinkx",
+    "wealth_flex": "apored",
+    "drama_conflict": "apored",
+    "hype_adjectives": "papaplatte",
+    "egocentrism": "papaplatte",
+    "denglisch": "papaplatte",
+    "avg_word_len": "maithinkx"
+  },
+  "winners_holdout": {
+    "vocabulary_ttr": "apored",
+    "wealth_flex": "apored",
+    "drama_conflict": "maithinkx",
+    "hype_adjectives": "papaplatte",
+    "egocentrism": "papaplatte",
+    "denglisch": "papaplatte",
+    "avg_word_len": "maithinkx"
+  },
+  "winners_holdout_it_mario_method": {
+    "vocabulary_ttr": "apored",
+    "wealth_flex": "apored",
+    "drama_conflict": "papaplatte",
+    "hype_adjectives": "papaplatte",
+    "egocentrism": "papaplatte",
+    "denglisch": "papaplatte",
+    "avg_word_len": "maithinkx"
+  },
+  "stability": {
+    "vocabulary_ttr": "mismatch",
+    "wealth_flex": "match",
+    "drama_conflict": "mismatch",
+    "hype_adjectives": "match",
+    "egocentrism": "match",
+    "denglisch": "match",
+    "avg_word_len": "match"
+  },
+  "match_rate_pct": 71.4,
+  "matches_out_of_total": "5/7"
+}

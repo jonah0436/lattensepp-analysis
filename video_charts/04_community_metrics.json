@@ -1,0 +1,123 @@
+{
+  "title": "Community-Metriken — 4 von 6 stimmen überein",
+  "subtitle": "Our computed winner vs. IT-Mario's declared winner",
+  "chart_type": "grouped_bar",
+  "x_axis": {
+    "label": "Metric",
+    "values": [
+      "Support",
+      "Questions",
+      "Comment length",
+      "Caps rate",
+      "Criticism",
+      "Slang"
+    ]
+  },
+  "y_axis": {
+    "label": "Rate / value",
+    "values": null
+  },
+  "series": [
+    {
+      "name": "papaplatte",
+      "data": [
+        17.303593,
+        0.118016,
+        62.449956,
+        0.010128,
+        8.844805,
+        10.069986
+      ]
+    },
+    {
+      "name": "apored",
+      "data": [
+        11.738462,
+        0.101935,
+        64.603642,
+        0.010595,
+        12.169231,
+        7.6
+      ]
+    },
+    {
+      "name": "maithinkx",
+      "data": [
+        7.457474,
+        0.16496,
+        201.58384,
+        0.007432,
+        8.171711,
+        1.092362
+      ]
+    }
+  ],
+  "match_count": 4,
+  "match_rate": "4/6",
+  "our_winners": [
+    "papaplatte",
+    "maithinkx",
+    "maithinkx",
+    "maithinkx",
+    "apored",
+    "papaplatte"
+  ],
+  "declared_winners": [
+    "maithinkx",
+    "maithinkx",
+    "maithinkx",
+    "maithinkx",
+    "apored",
+    "apored"
+  ],
+  "per_metric_match": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    false
+  ],
+  "annotations": [
+    {
+      "x": 0,
+      "y": 0,
+      "text": "Miss: we say papaplatte, IT-Mario says maithinkx",
+      "style": "arrow_to_declared"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "text": "Match: maithinkx (declared maithinkx)",
+      "style": "checkmark"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "text": "Match: maithinkx (declared maithinkx)",
+      "style": "checkmark"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "text": "Match: maithinkx (declared maithinkx)",
+      "style": "checkmark"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "text": "Match: apored (declared apored)",
+      "style": "checkmark"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "text": "Miss: we say papaplatte, IT-Mario says apored",
+      "style": "arrow_to_declared"
+    }
+  ],
+  "footnote": "Caps rate: lower = winner. All others: higher = winner. Rates per 1k tokens where applicable.",
+  "source_path": "results/community_metrics.json",
+  "generator_script": "bench/export_video_charts.py",
+  "generated_at": "2026-04-22T17:25:28Z"
+}

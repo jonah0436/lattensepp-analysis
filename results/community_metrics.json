@@ -1,0 +1,61 @@
+{
+  "creators": {
+    "papaplatte": {
+      "support": 17.303593306815703,
+      "questions": 0.11801566579634465,
+      "comment_length": 62.449956483899044,
+      "caps_rate": 0.010128211642362345,
+      "criticism": 8.844804726180286,
+      "slang": 10.069986405518353,
+      "n_comments": 5745,
+      "n_tokens": 59583
+    },
+    "apored": {
+      "support": 11.738461538461538,
+      "questions": 0.10193464477320761,
+      "comment_length": 64.60364168427898,
+      "caps_rate": 0.010595099183197199,
+      "criticism": 12.169230769230769,
+      "slang": 7.6,
+      "n_comments": 6151,
+      "n_tokens": 65000
+    },
+    "maithinkx": {
+      "support": 7.457474017005142,
+      "questions": 0.16496,
+      "comment_length": 201.58384,
+      "caps_rate": 0.007431817700950003,
+      "criticism": 8.171710965112675,
+      "slang": 1.0923623912232883,
+      "n_comments": 6250,
+      "n_tokens": 190413
+    }
+  },
+  "winners": {
+    "support": "papaplatte",
+    "questions": "maithinkx",
+    "comment_length": "maithinkx",
+    "caps_rate": "maithinkx",
+    "criticism": "apored",
+    "slang": "papaplatte"
+  },
+  "it_mario_declared_winners": {
+    "support": "maithinkx",
+    "questions": "maithinkx",
+    "comment_length": "maithinkx",
+    "caps_rate": "maithinkx",
+    "criticism": "apored",
+    "slang": "apored"
+  },
+  "match_count": 4,
+  "match_rate": "4/6",
+  "per_metric_match": {
+    "support": false,
+    "questions": true,
+    "comment_length": true,
+    "caps_rate": true,
+    "criticism": true,
+    "slang": false
+  },
+  "notes": "Deterministic keyword/regex analysis. No AI. Caps_rate: fraction of raw alpha tokens (>=2 chars) that are all-uppercase. Questions: fraction of comments containing '?'. Comment_length: mean characters per comment. Support / criticism / slang: keyword rate per 1k tokens. Winner = max value, except caps_rate where winner = min (least caps wins)."
+}

@@ -1,0 +1,61 @@
+{
+  "mape_all_cells": {
+    "script": 8.17,
+    "ai": 5.34
+  },
+  "winner_accuracy": {
+    "script": {
+      "hits": 7,
+      "total": 7,
+      "pct": 100.0
+    },
+    "ai": {
+      "hits": 7,
+      "total": 7,
+      "pct": 100.0
+    },
+    "it_mario": {
+      "hits": 5,
+      "total": 7,
+      "pct": 71.4
+    }
+  },
+  "winners_by_method": {
+    "gold": {
+      "vocabulary_ttr": "maithinkx",
+      "wealth_flex": "apored",
+      "drama_conflict": "apored",
+      "hype_adjectives": "papaplatte",
+      "egocentrism": "apored",
+      "denglisch": "papaplatte",
+      "avg_word_len": "maithinkx"
+    },
+    "script": {
+      "vocabulary_ttr": "maithinkx",
+      "wealth_flex": "apored",
+      "drama_conflict": "apored",
+      "hype_adjectives": "papaplatte",
+      "egocentrism": "apored",
+      "denglisch": "papaplatte",
+      "avg_word_len": "maithinkx"
+    },
+    "ai": {
+      "vocabulary_ttr": "maithinkx",
+      "wealth_flex": "apored",
+      "drama_conflict": "apored",
+      "hype_adjectives": "papaplatte",
+      "egocentrism": "apored",
+      "denglisch": "papaplatte",
+      "avg_word_len": "maithinkx"
+    },
+    "it_mario": {
+      "vocabulary_ttr": "maithinkx",
+      "wealth_flex": "apored",
+      "drama_conflict": "apored",
+      "hype_adjectives": "tie",
+      "egocentrism": "papaplatte",
+      "denglisch": "papaplatte",
+      "avg_word_len": "maithinkx"
+    }
+  }
+}

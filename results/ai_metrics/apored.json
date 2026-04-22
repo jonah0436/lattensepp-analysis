@@ -1,0 +1,16 @@
+{
+  "creator": "apored",
+  "n_videos": 25,
+  "source": "filtered",
+  "metrics": {
+    "vocabulary_ttr": 0.120018,
+    "wealth_flex": 3.1364,
+    "drama_conflict": 0.2444,
+    "hype_adjectives": 1.4664,
+    "egocentrism": 53.4205,
+    "denglisch": 46.9237,
+    "avg_word_len": 4.671,
+    "total_tokens": 49101
+  },
+  "notes": "Removed only Fer Dubai's explicit self-introduction segment from the Penthouse video. Music video lyrics kept per guidance. Other multi-speaker vlogs lack reliable speaker labels, so content is retained as apored-led dialogue."
+}

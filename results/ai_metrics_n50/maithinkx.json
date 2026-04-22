@@ -1,0 +1,26 @@
+{
+  "creator": "maithinkx",
+  "n_videos": 50,
+  "source": "n50_clean",
+  "metrics": {
+    "vocabulary_ttr": 0.42,
+    "wealth_flex": 0.0,
+    "drama_conflict": 0.1,
+    "hype_adjectives": 0.5,
+    "egocentrism": 32.0,
+    "denglisch": 15.0,
+    "avg_word_len": 7.2,
+    "total_tokens": 7800
+  },
+  "cost_usd": 0.092184,
+  "runtime_s": 98.301,
+  "_meta": {
+    "model": "claude-haiku-4-5-20251001",
+    "input_tokens": 10,
+    "output_tokens": 10899,
+    "cache_read_input_tokens": 39219,
+    "cache_creation_input_tokens": 27006,
+    "duration_api_ms": 92067,
+    "prompt_chars": 51988
+  }
+}

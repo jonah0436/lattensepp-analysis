@@ -1,0 +1,495 @@
+{
+  "corpus_n_per_creator": {
+    "apored": 50,
+    "maithinkx": 50,
+    "papaplatte": 50
+  },
+  "wall_seconds_methods": 0.719,
+  "methods": {
+    "it_mario": {
+      "apored": {
+        "total_tokens": 94884.0,
+        "vocabulary_ttr": 0.09972176552421905,
+        "avg_word_len": 4.659194384722398,
+        "denglisch": 9.042620462880992,
+        "wealth_flex": 1.1909278698199908,
+        "drama_conflict": 0.042156738754689935,
+        "hype_adjectives": 0.9696049913578685,
+        "egocentrism": 46.87829349521521
+      },
+      "maithinkx": {
+        "total_tokens": 149164.0,
+        "vocabulary_ttr": 0.1089874232388512,
+        "avg_word_len": 5.425310396610442,
+        "denglisch": 1.7765680727253224,
+        "wealth_flex": 0.5095063151966963,
+        "drama_conflict": 0.03352015231557212,
+        "hype_adjectives": 0.10056045694671638,
+        "egocentrism": 14.353329221527984
+      },
+      "papaplatte": {
+        "total_tokens": 315854.0,
+        "vocabulary_ttr": 0.06486541250071236,
+        "avg_word_len": 4.404284891120581,
+        "denglisch": 24.330861727253733,
+        "wealth_flex": 0.46857092200826966,
+        "drama_conflict": 0.03166019743299119,
+        "hype_adjectives": 1.4310409239712019,
+        "egocentrism": 48.96249533012087
+      }
+    },
+    "script": {
+      "apored": {
+        "vocabulary_ttr": 0.09972176552421905,
+        "wealth_flex": 2.5504826946587413,
+        "drama_conflict": 0.3899498334808819,
+        "hype_adjectives": 1.5071034104801653,
+        "egocentrism": 47.310400067450786,
+        "denglisch": 26.895999325492177,
+        "avg_word_len": 4.659194384722398,
+        "total_tokens": 94884.0
+      },
+      "maithinkx": {
+        "vocabulary_ttr": 0.1089874232388512,
+        "wealth_flex": 1.059236813172079,
+        "drama_conflict": 0.17430479204097504,
+        "hype_adjectives": 0.37542570593440777,
+        "egocentrism": 14.581266257273873,
+        "denglisch": 24.49652731222011,
+        "avg_word_len": 5.425310396610442,
+        "total_tokens": 149164.0
+      },
+      "papaplatte": {
+        "vocabulary_ttr": 0.06486541250071236,
+        "wealth_flex": 0.6711961855794133,
+        "drama_conflict": 0.10764467127217005,
+        "hype_adjectives": 2.7227769792372425,
+        "egocentrism": 49.361413817776565,
+        "denglisch": 44.40975893925674,
+        "avg_word_len": 4.404284891120581,
+        "total_tokens": 315854.0
+      }
+    },
+    "hybrid": {
+      "apored": {
+        "total_tokens": 94884.0,
+        "vocabulary_ttr": 0.09972176552421905,
+        "avg_word_len": 4.659194384722398,
+        "wealth_flex": 2.6031786181021035,
+        "drama_conflict": 0.4321065722355718,
+        "hype_adjectives": 2.4029341090173264,
+        "egocentrism": 47.80574174781839,
+        "denglisch": 257.8938493318157
+      },
+      "maithinkx": {
+        "total_tokens": 149164.0,
+        "vocabulary_ttr": 0.1089874232388512,
+        "avg_word_len": 5.425310396610442,
+        "wealth_flex": 1.1799093615081389,
+        "drama_conflict": 0.30838540130326353,
+        "hype_adjectives": 0.5564345284384973,
+        "egocentrism": 14.90976374996648,
+        "denglisch": 188.85924217639644
+      },
+      "papaplatte": {
+        "total_tokens": 315854.0,
+        "vocabulary_ttr": 0.06486541250071236,
+        "avg_word_len": 4.404284891120581,
+        "wealth_flex": 0.7186864817289002,
+        "drama_conflict": 0.11081069101546917,
+        "hype_adjectives": 3.0963673089465384,
+        "egocentrism": 49.655853653903385,
+        "denglisch": 284.9354448574341
+      }
+    },
+    "ai": {
+      "apored": {
+        "vocabulary_ttr": 0.120018,
+        "wealth_flex": 3.1364,
+        "drama_conflict": 0.2444,
+        "hype_adjectives": 1.4664,
+        "egocentrism": 53.4205,
+        "denglisch": 46.9237,
+        "avg_word_len": 4.671,
+        "total_tokens": 49101
+      },
+      "maithinkx": {
+        "vocabulary_ttr": 0.1347263775353954,
+        "wealth_flex": 1.3663454969492803,
+        "drama_conflict": 0.11778840490942072,
+        "hype_adjectives": 0.318028693255436,
+        "egocentrism": 12.367782515489175,
+        "denglisch": 23.69902706777545,
+        "avg_word_len": 5.437654597281443,
+        "total_tokens": 84898.0
+      },
+      "papaplatte": {
+        "vocabulary_ttr": 0.086431,
+        "wealth_flex": 0.6296,
+        "drama_conflict": 0.0544,
+        "hype_adjectives": 3.257,
+        "egocentrism": 48.8861,
+        "denglisch": 111.6086,
+        "avg_word_len": 4.3835,
+        "total_tokens": 128646
+      }
+    }
+  },
+  "winners_by_method": {
+    "it_mario": {
+      "vocabulary_ttr": "maithinkx",
+      "wealth_flex": "apored",
+      "drama_conflict": "apored",
+      "hype_adjectives": "papaplatte",
+      "egocentrism": "papaplatte",
+      "denglisch": "papaplatte",
+      "avg_word_len": "maithinkx",
+      "total_tokens": "papaplatte"
+    },
+    "script": {
+      "vocabulary_ttr": "maithinkx",
+      "wealth_flex": "apored",
+      "drama_conflict": "apored",
+      "hype_adjectives": "papaplatte",
+      "egocentrism": "papaplatte",
+      "denglisch": "papaplatte",
+      "avg_word_len": "maithinkx",
+      "total_tokens": "papaplatte"
+    },
+    "hybrid": {
+      "vocabulary_ttr": "maithinkx",
+      "wealth_flex": "apored",
+      "drama_conflict": "apored",
+      "hype_adjectives": "papaplatte",
+      "egocentrism": "papaplatte",
+      "denglisch": "papaplatte",
+      "avg_word_len": "maithinkx",
+      "total_tokens": "papaplatte"
+    },
+    "ai": {
+      "vocabulary_ttr": "maithinkx",
+      "wealth_flex": "apored",
+      "drama_conflict": "apored",
+      "hype_adjectives": "papaplatte",
+      "egocentrism": "apored",
+      "denglisch": "papaplatte",
+      "avg_word_len": "maithinkx",
+      "total_tokens": "papaplatte"
+    }
+  },
+  "agreement_with_it_mario": {
+    "it_mario": {
+      "hits": 6,
+      "tie_matches": 1,
+      "total": 7,
+      "pct": 85.7
+    },
+    "script": {
+      "hits": 6,
+      "tie_matches": 1,
+      "total": 7,
+      "pct": 85.7
+    },
+    "hybrid": {
+      "hits": 6,
+      "tie_matches": 1,
+      "total": 7,
+      "pct": 85.7
+    },
+    "ai": {
+      "hits": 5,
+      "tie_matches": 1,
+      "total": 7,
+      "pct": 71.4
+    }
+  },
+  "internal_consistency_hybrid_vs_others": {
+    "it_mario": {
+      "hits": 7,
+      "total": 7,
+      "pct": 100.0
+    },
+    "script": {
+      "hits": 7,
+      "total": 7,
+      "pct": 100.0
+    },
+    "hybrid": {
+      "hits": 7,
+      "total": 7,
+      "pct": 100.0
+    },
+    "ai": {
+      "hits": 6,
+      "total": 7,
+      "pct": 85.7
+    }
+  },
+  "mape_vs_hybrid_per_metric": {
+    "it_mario": {
+      "vocabulary_ttr": 0.0,
+      "wealth_flex": 48.62,
+      "drama_conflict": 83.6,
+      "hype_adjectives": 65.12,
+      "egocentrism": 2.36,
+      "denglisch": 95.67,
+      "avg_word_len": 0.0,
+      "total_tokens": 0.0
+    },
+    "script": {
+      "vocabulary_ttr": 0.0,
+      "wealth_flex": 6.29,
+      "drama_conflict": 18.7,
+      "hype_adjectives": 27.29,
+      "egocentrism": 1.28,
+      "denglisch": 87.0,
+      "avg_word_len": 0.0,
+      "total_tokens": 0.0
+    },
+    "ai": {
+      "vocabulary_ttr": 25.74,
+      "wealth_flex": 16.23,
+      "drama_conflict": 52.05,
+      "hype_adjectives": 29.0,
+      "egocentrism": 10.11,
+      "denglisch": 76.7,
+      "avg_word_len": 0.32,
+      "total_tokens": 50.2
+    }
+  },
+  "per_metric_story": [
+    {
+      "metric": "vocabulary_ttr",
+      "it_mario_declared": [
+        "maithinkx"
+      ],
+      "hybrid_picked": "maithinkx",
+      "methods": {
+        "it_mario": {
+          "winner": "maithinkx",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 0.0
+        },
+        "script": {
+          "winner": "maithinkx",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 0.0
+        },
+        "hybrid": {
+          "winner": "maithinkx",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": null
+        },
+        "ai": {
+          "winner": "maithinkx",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 25.74
+        }
+      }
+    },
+    {
+      "metric": "wealth_flex",
+      "it_mario_declared": [
+        "apored"
+      ],
+      "hybrid_picked": "apored",
+      "methods": {
+        "it_mario": {
+          "winner": "apored",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 48.62
+        },
+        "script": {
+          "winner": "apored",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 6.29
+        },
+        "hybrid": {
+          "winner": "apored",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": null
+        },
+        "ai": {
+          "winner": "apored",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 16.23
+        }
+      }
+    },
+    {
+      "metric": "drama_conflict",
+      "it_mario_declared": [
+        "apored"
+      ],
+      "hybrid_picked": "apored",
+      "methods": {
+        "it_mario": {
+          "winner": "apored",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 83.6
+        },
+        "script": {
+          "winner": "apored",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 18.7
+        },
+        "hybrid": {
+          "winner": "apored",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": null
+        },
+        "ai": {
+          "winner": "apored",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 52.05
+        }
+      }
+    },
+    {
+      "metric": "hype_adjectives",
+      "it_mario_declared": [
+        "apored",
+        "papaplatte"
+      ],
+      "hybrid_picked": "papaplatte",
+      "methods": {
+        "it_mario": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "tie_match",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 65.12
+        },
+        "script": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "tie_match",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 27.29
+        },
+        "hybrid": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "tie_match",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": null
+        },
+        "ai": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "tie_match",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 29.0
+        }
+      }
+    },
+    {
+      "metric": "egocentrism",
+      "it_mario_declared": [
+        "papaplatte"
+      ],
+      "hybrid_picked": "papaplatte",
+      "methods": {
+        "it_mario": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 2.36
+        },
+        "script": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 1.28
+        },
+        "hybrid": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": null
+        },
+        "ai": {
+          "winner": "apored",
+          "match_vs_it_mario": "miss",
+          "matches_hybrid": false,
+          "mape_vs_hybrid": 10.11
+        }
+      }
+    },
+    {
+      "metric": "denglisch",
+      "it_mario_declared": [
+        "papaplatte"
+      ],
+      "hybrid_picked": "papaplatte",
+      "methods": {
+        "it_mario": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 95.67
+        },
+        "script": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 87.0
+        },
+        "hybrid": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": null
+        },
+        "ai": {
+          "winner": "papaplatte",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 76.7
+        }
+      }
+    },
+    {
+      "metric": "avg_word_len",
+      "it_mario_declared": [
+        "maithinkx"
+      ],
+      "hybrid_picked": "maithinkx",
+      "methods": {
+        "it_mario": {
+          "winner": "maithinkx",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 0.0
+        },
+        "script": {
+          "winner": "maithinkx",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 0.0
+        },
+        "hybrid": {
+          "winner": "maithinkx",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": null
+        },
+        "ai": {
+          "winner": "maithinkx",
+          "match_vs_it_mario": "hit",
+          "matches_hybrid": true,
+          "mape_vs_hybrid": 0.32
+        }
+      }
+    }
+  ],
+  "_reference_note": "agreement_with_it_mario is the PRIMARY accuracy metric. internal_consistency_hybrid_vs_others is a DIAGNOSTIC and is not a truth claim — hybrid is our best-of-breed logic, not ground truth."
+}

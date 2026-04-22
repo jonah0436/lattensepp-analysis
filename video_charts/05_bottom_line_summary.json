@@ -31,7 +31,7 @@
   "footnote": "Agreement measured against IT-Mario's declared winners. See T09, T05 for details.",
   "source_path": "results/methods_n50_clean.json + results/community_metrics.json",
   "generator_script": "bench/export_video_charts.py",
-  "generated_at": "2026-04-22T17:25:28Z",
+  "generated_at": "2026-04-22T17:57:23Z",
   "censorship_finding": {
     "papaplatte_total_censors": 515,
     "apored_total_censors": 4,

@@ -119,5 +119,5 @@
   "footnote": "Caps rate: lower = winner. All others: higher = winner. Rates per 1k tokens where applicable.",
   "source_path": "results/community_metrics.json",
   "generator_script": "bench/export_video_charts.py",
-  "generated_at": "2026-04-22T17:25:28Z"
+  "generated_at": "2026-04-22T17:57:23Z"
 }

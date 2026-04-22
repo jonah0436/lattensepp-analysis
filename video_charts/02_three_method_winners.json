@@ -69,18 +69,18 @@
     {
       "x": 3,
       "y": 0,
-      "text": "Hype: IT-Mario declared a tie (papaplatte & apored) — all 3 methods put papaplatte #1.",
+      "text": "Hype: IT-Mario declared a tie (papaplatte & apored). Numerically all 3 methods rank papaplatte #1; AI's output text is literally 'tie'.",
       "style": "callout"
     },
     {
       "x": 4,
       "y": 0,
-      "text": "Ego: AI picks apored, replica & hybrid pick papaplatte (only divergence on winner identity).",
+      "text": "Ego: AI picks apored, replica & hybrid pick papaplatte. AI also diverges on drama (outputs 'tie').",
       "style": "callout"
     }
   ],
   "footnote": "Scales differ per metric — bars within each cluster are comparable, across clusters not.",
   "source_path": "results/methods_n50_clean.json",
   "generator_script": "bench/export_video_charts.py",
-  "generated_at": "2026-04-22T17:25:28Z"
+  "generated_at": "2026-04-22T17:57:23Z"
 }

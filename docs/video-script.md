@@ -132,7 +132,7 @@ filtered out.
 
 **Chart source:** no JSON chart yet; screenshot of repo code
 blocks. Reference: `src/script_version/analyze.py`,
-`results/ai_metrics/`.
+`results/ai_metrics_n50/`.
 
 ---
 
@@ -152,20 +152,19 @@ blocks. Reference: `src/script_version/analyze.py`,
 - 0:45-1:15: per-creator bar chart pops up next to the matrix.
   Animated bars for the six quant metrics at scaled comparable
   ranges.
-- 1:15-1:30: "WINNER HITS" big-number card. IT-Mario replica:
-  6/7 + 1 tie-match. AI: 4/7 + 1 tie-match. Hybrid: 6/7 + 1 tie-
-  match. Under the strict scoring, all three methods earn the
-  same tie-match credit on `hype_adjectives` (declared tie).
-  What differs is the output text: AI literally outputs "tie";
-  the deterministic methods output "papaplatte" (which sits
-  inside the declared tie set).
+- 1:15-1:30: "WINNER HITS" card, three rows of big numbers:
+  - IT-Mario replica: 6/7 + 1 tie-match
+  - AI agents: 4/7 + 1 tie-match
+  - Hybrid: 6/7 + 1 tie-match
+  Sub-line underneath: *"Alle drei kriegen denselben Tie-Match
+  auf Hype. Unterschiedlich ist nur, was wortwörtlich rauskommt."*
 
 **Message intent:** All three methods are in the same ballpark.
-None of the methods is secretly broken. The interesting result
-is not "one method wins" — it's that AI's output text mirrors
-Mario's on-camera phrasing ("tie") where the deterministic
-methods commit to a single winner from the tie set. Mechanically,
-everyone scores the tie-match the same way.
+None of the methods is secretly broken. The interesting result is
+not "one method wins"; it's that AI's output text mirrors Mario's
+on-camera phrasing ("tie") where the deterministic methods commit
+to a single winner from the tie set. Mechanically, everyone
+scores the tie-match the same way.
 
 **German key phrases:**
 
@@ -175,13 +174,11 @@ everyone scores the tie-match the same way.
   sieben. Unser Hybrid: auch sechs von sieben. Plus jeweils ein
   Tie-Match bei Hype-Adjektiven — das zählt aber nicht als voller
   Treffer."*
-- Nuance beat: *"Kleine Pointe: die AI hat als einzige wortwörtlich
-  'Unentschieden' ausgegeben. Mario hat im Video auch 'gleich
-  häufig' gesagt. Die deterministischen Methoden haben Papaplatte
-  gewählt — das ist mathematisch noch im Tie-Set von Mario,
-  zählt also als Tie-Match, aber im Text steht halt 'Papaplatte'.
-  Alle vier bekommen das gleiche Tie-Match-Kredit; unterschiedlich
-  ist nur, was da wortwörtlich rauskommt."*
+- Nuance beat (~15 sec): *"Kleine Pointe: AI hat wortwörtlich
+  'Unentschieden' ausgegeben, wie Mario im Video. Replica und
+  Hybrid haben Papaplatte genommen, was mathematisch im Tie-Set
+  bleibt. Alle drei kriegen denselben Tie-Match-Kredit; nur die
+  Ausgabe ist anders."*
 - Transition: *"Also — Methoden funktionieren alle. Die
   spannende Frage ist: wo liegt Mario trotzdem daneben?"*
 

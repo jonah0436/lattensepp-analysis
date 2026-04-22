@@ -9,8 +9,8 @@ Status: Active
 ## Mission
 
 IT-Mario laid out his entire YouTube analysis pipeline on camera.
-We rebuild it three ways on the same 150-video corpus — his exact
-script, three parallel AI agents, and an improved hybrid — then
+We rebuild it three ways on the same 150-video corpus (his exact
+script, three parallel AI agents, and an improved hybrid), then
 compare accuracy across methods. Ship a 6-10 minute German YouTube
 video that walks through his method, our three reimplementations,
 and where ours wins, with motion graphics making the results
@@ -21,7 +21,7 @@ readable for a normal viewer. Full code public on GitHub.
 Three stacked motivations:
 
 1. Showcase a full data-science rebuild in public. IT-Mario outlined
-   his whole pipeline on camera — an unusually clean spec to
+   his whole pipeline on camera: an unusually clean spec to
    reproduce. Three independent reimplementations (his script, AI
    agents, our hybrid) make the comparison legible to a non-technical
    viewer.
@@ -60,9 +60,10 @@ reactions, and the meta reveal.
 |---|---|---|
 | 6-10 min main video | Planned | Jonah |
 | 3 YouTube Shorts (45-60s each) | Planned | Jonah |
-| Public GitHub repo | V2 ready, V2.5 pending | Claude |
-| report.html dashboard with V2.5 sections | Pending | Claude |
-| Scene-by-scene video beats doc | Pending | Claude |
+| Public GitHub repo | Shipped (`github.com/jonah0436/lattensepp-analysis`) | Claude |
+| Chart JSONs for video production (`video_charts/*.json`) | Shipped (5 files) | Claude |
+| Scene-by-scene video beats doc | Shipped (`docs/video-script.md`) | Claude |
+| Shorts beats doc | Shipped (`docs/shorts-script.md`) | Claude |
 
 Explicitly NOT in scope for this sprint:
 
@@ -97,8 +98,8 @@ Eight scenes:
 ## Method decisions (V2.5)
 
 - 3 methods in the video narrative: (a) IT-Mario exact replica using
-  his verbatim 5-6 word keyword lists, (b) AI — three parallel Claude
-  agents computing metrics independently, (c) Hybrid — our improved
+  his verbatim 5-6 word keyword lists, (b) AI: three parallel Claude
+  agents computing metrics independently, (c) Hybrid: our improved
   version with extended lists, a 234k-word English denglisch
   dictionary, simple stemming, and deterministic math for TTR and
   word length. The deterministic "script version" from V2 stays as an
@@ -121,13 +122,19 @@ Eight scenes:
 - [x] All 4 V2.5 data components complete: comments, livestream
       filter, denglisch replica, censorship-density pivot (was
       Whisper profanity test)
-- [ ] report.html updated with V2.5 sections, all charts synced
-- [ ] Chart data exported as JSON for the video production pipeline
-- [ ] Public GitHub repo with working code, README, and MIT license
-- [ ] Video scene-by-scene beats doc complete
+- [x] Chart data exported as JSON for the video production pipeline
+      (5 files in `video_charts/`)
+- [x] Public GitHub repo with working code, README, and MIT license
+      (`github.com/jonah0436/lattensepp-analysis`)
+- [x] Video scene-by-scene beats doc complete (`docs/video-script.md`)
+- [x] Shorts beats doc complete (`docs/shorts-script.md`)
 - [ ] Main video shipped on new channel
 - [ ] 3 Shorts staggered over week 1 post-launch
 - [ ] Reddit launch posts up within 24h of upload
+
+Note: `report.html` is a V2-era internal dashboard and is not a
+V2.5 ship gate. V2.5 artifacts live in `video_charts/` for the
+animation pipeline and in `results/` for the raw JSON.
 
 ## Timeline
 
@@ -135,7 +142,7 @@ Eight scenes:
 
 | Week | Focus |
 |---|---|
-| 1 | Data and code work (Claude): comments, filters, Whisper, reruns, exports, repo cleanup, script beats |
+| 1 | Data and code work (Claude): comments, filters, censorship-density pivot, reruns, exports, repo cleanup, script beats. Shipped. |
 | 2 | Video production (Jonah): animations, record, edit, thumbnail, Shorts cut, launch |
 
 See docs/TASKS.md for the day-by-day task breakdown with acceptance
@@ -145,13 +152,12 @@ criteria.
 
 Cap: $5 total for compute and API spend.
 
-Projected spend:
+Actual spend: $0.27 total.
 
-- AI re-run on N=50: about $0.56
-- Censorship-density analysis (T07 pivot, was Whisper): about $0.03 actual
-- Comment AI classification (if needed for sentiment/support):
-  about $1.00
-- Headroom: about $3.14
+- AI re-run on N=50 (T08): $0.24
+- Censorship-density analysis (T07 pivot, was Whisper): $0.03
+- Comment AI classification (T05, cut to keyword rates): $0.00
+- Headroom remaining: $4.73
 
 ## Constraints
 
@@ -200,7 +206,8 @@ From the 40-question intake interview plus Day-1 scope refinement:
 - 6-10 min video length (new channel, retention matters)
 - Comments included despite scope expansion (matches Mario's full
   scope)
-- Whisper on 3 samples, not 1 (bracket profanity delta with a mean)
+- Whisper test pivoted to `[__]` density across all 150 videos
+  (OpenRouter does not host Whisper; see T07 pivot in `HANDOFF.md`)
 - Scene beats, not full script (face-cam improv reads natural)
 - Reddit seeding, not creator DMs (soft signal, not thirsty)
 - Meta reveal at video end (sets up AI Playbook series)
@@ -209,11 +216,13 @@ From the 40-question intake interview plus Day-1 scope refinement:
 
 ## Related docs
 
-- HANDOFF.md — session-to-session handoff summary
-- docs/TASKS.md — task specification with acceptance criteria
-- docs/IT-MARIO-VIDEO.md — source video breakdown
-- docs/FINDINGS.md — V2 technical findings (needs sample-size fix in
-  task T01)
-- docs/video-script.md — scene-by-scene beats (created in task T13)
-- docs/shorts-script.md — Shorts beats (created in task T13)
-- report.html — live dashboard
+- `HANDOFF.md`: session-to-session handoff summary (gitignored)
+- `docs/TASKS.md`: task specification with acceptance criteria
+- `docs/IT-MARIO-VIDEO.md`: source video breakdown
+- `docs/CURRENT_STATE.md`: canonical primary/secondary reference
+  accuracy split
+- `docs/FINDINGS.md`: V2.5 technical findings (sample-size fix
+  landed in T01)
+- `docs/video-script.md`: scene-by-scene beats (T13 output)
+- `docs/shorts-script.md`: Shorts beats (T13 output)
+- `report.html`: V2 internal dashboard (unchanged for V2.5)

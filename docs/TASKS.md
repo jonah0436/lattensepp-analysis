@@ -174,16 +174,15 @@ Claude owns all T0x tasks (data and code). Jonah owns all T2x tasks
 
 ### T12. GitHub repo cleanup and README
 
-- [~] Owner: Claude (scaffolding written: README, LICENSE, .gitignore, requirements.txt, data/README.md. `git init` + push pending Jonah's call on repo structure.)
+- [x] Owner: Claude (shipped — public repo live at `github.com/jonah0436/lattensepp-analysis`)
 - Dependencies: all data tasks complete
 - Estimate: 60 min
 - Acceptance:
-  - New README.md with project overview, how to reproduce, license
-  - .gitignore covers .venv, data/whisper_samples/ if large
+  - README.md with project overview, how to reproduce, license
+  - .gitignore covers .venv, data/whisper_samples/, HANDOFF.md
   - License: MIT, added as LICENSE file
   - All Python modules have a top-level docstring
   - Repo pushed public at github.com/jonah0436/lattensepp-analysis
-    (or similar handle)
 - Output: public GitHub repo URL
 
 ### T13. Video script beats and Shorts beats
@@ -275,10 +274,10 @@ Claude owns all T0x tasks (data and code). Jonah owns all T2x tasks
 
 Ordered from first to cut to last:
 
-1. T11 (N=10 held-out validation) — internal only, no video impact
+1. T11 (N=10 held-out validation): internal only, no video impact
 2. Part of T05: skip AI sentiment classification, use keyword rates
    for support and criticism instead
-3. T06 (denglisch reverse-engineer) — fall back to "method unknown,
+3. T06 (denglisch reverse-engineer): fall back to "method unknown,
    used our hybrid" disclosed in the video
 4. Part of T07: drop Whisper from 3 Papaplatte samples to 1 if
    runtime blows up
@@ -307,12 +306,12 @@ T24 runs parallel to T21-T25
 
 ## Budget tracking
 
-Projected spend under $5 cap.
+Actual spend: $0.27 against $5.00 cap.
 
 | Task | Projected | Actual |
 |---|---:|---:|
-| T07 Whisper on 3 samples | $0.30 | — |
-| T08 AI re-run on N=50 | $0.56 | — |
-| T05 AI sentiment (optional) | $1.00 | — |
-| Headroom | $3.14 | — |
-| **Total cap** | **$5.00** | — |
+| T07 censorship-density (pivoted from Whisper) | $0.30 | $0.03 |
+| T08 AI re-run on N=50 | $0.56 | $0.24 |
+| T05 AI sentiment (cut to keyword rates) | $1.00 | $0.00 |
+| Headroom remaining | $3.14 | $4.73 |
+| **Total cap** | **$5.00** | **$0.27** |

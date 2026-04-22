@@ -158,13 +158,19 @@ def build_chart_01(methods: dict) -> dict:
             {
                 "x": 3,
                 "y": 1,
-                "text": "IT-Mario declared hype a tie (papaplatte & apored). AI picks papaplatte → tie-match.",
+                "text": "IT-Mario declared hype a tie (papaplatte & apored). AI literally outputs 'tie' (tie-match).",
+                "style": "callout",
+            },
+            {
+                "x": 2,
+                "y": 1,
+                "text": "AI misses drama: outputs 'tie', declared apored. Tie output on a single-winner metric is a miss.",
                 "style": "callout",
             },
             {
                 "x": 4,
                 "y": 1,
-                "text": "AI's only real miss: egocentrism (picks apored, declared papaplatte).",
+                "text": "AI misses egocentrism: picks apored, declared papaplatte.",
                 "style": "callout",
             },
         ],
@@ -206,13 +212,13 @@ def build_chart_02(methods: dict) -> dict:
             {
                 "x": 3,
                 "y": 0,
-                "text": "Hype: IT-Mario declared a tie (papaplatte & apored) — all 3 methods put papaplatte #1.",
+                "text": "Hype: IT-Mario declared a tie (papaplatte & apored). Numerically all 3 methods rank papaplatte #1; AI's output text is literally 'tie'.",
                 "style": "callout",
             },
             {
                 "x": 4,
                 "y": 0,
-                "text": "Ego: AI picks apored, replica & hybrid pick papaplatte (only divergence on winner identity).",
+                "text": "Ego: AI picks apored, replica & hybrid pick papaplatte. AI also diverges on drama (outputs 'tie').",
                 "style": "callout",
             },
         ],
